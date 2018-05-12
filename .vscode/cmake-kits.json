@@ -1,0 +1,6 @@
+[
+    {
+      "name": "LLVM",
+      "toolchainFile": "llvm-toolchain.cmake"
+    }
+]

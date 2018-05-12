@@ -1,0 +1,77 @@
+//  Electroslag Interactive Graphics System
+//  Copyright 2015 Joshua Buckman
+//
+//  Licensed under the Apache License, Version 2.0 (the "License");
+//  you may not use this file except in compliance with the License.
+//  You may obtain a copy of the License at
+//
+//      http://www.apache.org/licenses/LICENSE-2.0
+//
+//  Unless required by applicable law or agreed to in writing, software
+//  distributed under the License is distributed on an "AS IS" BASIS,
+//  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+//  See the License for the specific language governing permissions and
+//  limitations under the License.
+
+// Decode ELECTROSLAG_BUILD flag; replicated in precomp.hpp
+#if ELECTROSLAG_BUILD==1
+#define ELECTROSLAG_BUILD_DEBUG
+#elif ELECTROSLAG_BUILD==2
+#define ELECTROSLAG_BUILD_RELEASE
+#elif ELECTROSLAG_BUILD==3
+#define ELECTROSLAG_BUILD_SHIP
+#else
+#error ELECTROSLAG_BUILD is undefined!
+#endif
+
+#include "electroslag/windows_sdk.hpp"
+#include "electroslag/version.hpp"
+#include "electroslag/resource_id.hpp"
+
+// If I don't include this manually, I get VS_FF_DEBUG are undefined. Which is weird.
+#include <verrsrc.h>
+
+// Application icon
+IDI_APP_WINDOW ICON "electroslag/resources/icon/electroslag.ico"
+
+// Version information
+#define ELECTROSLAG_VERSION_DIGITS ELECTROSLAG_VERSION_MAJOR,ELECTROSLAG_VERSION_MINOR,ELECTROSLAG_VERSION_BUILD,ELECTROSLAG_VERSION_REVISION
+
+#if defined(ELECTROSLAG_BUILD_SHIP)
+#define ELECTROSLAG_VERSION_FILEFLAGS 0
+#else
+#define ELECTROSLAG_VERSION_FILEFLAGS VS_FF_DEBUG | VS_FF_PRIVATEBUILD
+#define ELECTROSLAG_VERSION_COMMENT "This is an engineering build! Do not redistribute!"
+#endif
+
+VS_VERSION_INFO VERSIONINFO
+FILEVERSION ELECTROSLAG_VERSION_DIGITS
+PRODUCTVERSION ELECTROSLAG_VERSION_DIGITS
+FILEFLAGS ELECTROSLAG_VERSION_FILEFLAGS
+FILEOS VOS__WINDOWS32
+FILETYPE VFT_DLL
+FILESUBTYPE VFT2_UNKNOWN
+FILEFLAGSMASK VS_FFI_FILEFLAGSMASK
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904E4"
+        BEGIN
+            VALUE "CompanyName", "Joshua Buckman"
+            VALUE "ProductName", "electroslag"
+            VALUE "FileDescription", "Electroslag Interactive Graphics System"
+            VALUE "LegalCopyright", "Copyright 2015 Joshua Buckman"
+            VALUE "FileVersion", ELECTROSLAG_VERSION_STRING
+            VALUE "ProductVersion", ELECTROSLAG_VERSION_STRING
+            VALUE "InternalName", "electroslag.exe"
+            VALUE "OriginalFilename", "electroslag.exe"
+#if defined(ELECTROSLAG_VERSION_COMMENT)
+            VALUE "Comment", ELECTROSLAG_VERSION_COMMENT
+#endif
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1252
+    END
+END

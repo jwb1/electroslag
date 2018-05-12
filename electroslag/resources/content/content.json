@@ -1,0 +1,31 @@
+{
+    "d:version": 1,
+
+    // Stock content referenced by the gltf2 mesh importer.
+
+
+    // dwarf contains a single model of a garden gnome. Which is technically not a dwarf.
+    "dwarf::transform": {
+        "type_name": "electroslag::renderer::transform_descriptor",
+        "rotation_euler_angle_deg": [ 0.0, 180.0, 0.0 ],
+        "scale": [ 1.0, 1.0, 1.0 ],
+        "translate": [ 0.0, 0.0, 0.0 ]
+    },
+
+    "dwarf_importer": {
+        "type_name": "electroslag::mesh::gltf2_importer",
+        "file_name": "content/dwarf/dwarf.gltf2",
+        "object_name_prefix": "dwarf",
+        "bake_in_scale": [ 7.0, 7.0, 7.0 ],
+        "instance_transform": "dwarf::transform"
+    },
+
+    "content::scene": {
+        "type_name": "electroslag::renderer::instance_descriptor",
+        "transform":  0,
+        "renderable":  0,
+        "child_count": 1,
+        "c0000_importer": "dwarf_importer",
+        "c0000_instance":  "dwarf::instance"
+    }
+}

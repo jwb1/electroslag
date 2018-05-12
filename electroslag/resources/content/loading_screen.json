@@ -1,0 +1,135 @@
+{
+    "d:version": 1,
+    // loading_screen.json contains built-in content for displaying a loading screen.
+
+    // Samplers
+    "loading_screen::point_sampling" : {
+        "type_name": "electroslag::graphics::serialized_sampler_params",
+        "magnification_filter": "texture_filter_point",
+        "minification_filter": "texture_filter_point",
+        "mip_filter": "texture_filter_default",
+        "s_wrap_mode": "texture_coord_wrap_default",
+        "t_wrap_mode": "texture_coord_wrap_default",
+        "u_wrap_mode": "texture_coord_wrap_default"
+    },
+
+    // Textures
+    "loading_screen::texture::importer": {
+        "type_name": "electroslag::texture::gli_importer",
+        "file_name": "loading_screen/texture/loading_screen.dds",
+        "object_name": "loading_screen::texture",
+        "sampler": "loading_screen::point_sampling"
+    },
+
+    // Vertex formats
+    "loading_screen::vertex_fmt::vert_position": {
+        "type_name": "electroslag::graphics::shader_field",
+        "field_type": "field_type_vec2",
+        "field_kind": "field_kind_attribute_position",
+        "index": 0,
+        "offset": 0
+    },
+    "loading_screen::vertex_fmt::vert_texcoord": {
+        "type_name": "electroslag::graphics::shader_field",
+        "field_type": "field_type_vec2",
+        "field_kind": "field_kind_attribute_texcoord2",
+        "index": 1,
+        "offset": 8
+    },
+    "loading_screen::vertex_fmt": {
+        "type_name": "electroslag::graphics::shader_field_map",
+        "field_count": 2,
+        "f0000": "loading_screen::vertex_fmt::vert_position",
+        "f0001": "loading_screen::vertex_fmt::vert_texcoord"
+    },
+
+    // Geometry
+    // Center a square on the middle 1/10 of the screen in x and y
+    // assuming a 16:9 aspect ratio
+    "loading_screen::vbo": {
+        "type_name": "electroslag::graphics::buffer_descriptor",
+        "buffer_memory_map": "buffer_memory_map_static",
+        "buffer_memory_caching": "buffer_memory_caching_static",
+        "data_sizeof": 64,
+        "data": [
+          //        x     y   tx   ty
+            -0.177778, -0.1, 0.0, 0.0,
+             0.177778, -0.1, 1.0, 0.0,
+             0.177778,  0.1, 1.0, 1.0,
+            -0.177778,  0.1, 0.0, 1.0
+            ]
+    },
+
+    "loading_screen::vert_position_attrib": {
+        "type_name": "electroslag::graphics::vertex_attribute",
+        "stride": 16,
+        "vbo": "loading_screen::vbo",
+        "field": "loading_screen::vertex_fmt::vert_position"
+    },
+    "loading_screen::vert_tex_coord_attrib": {
+        "type_name": "electroslag::graphics::vertex_attribute",
+        "stride": 16,
+        "vbo": "loading_screen::vbo",
+        "field": "loading_screen::vertex_fmt::vert_texcoord"
+    },
+    "loading_screen::ibo": {
+        "type_name": "electroslag::graphics::buffer_descriptor",
+        "buffer_memory_map": "buffer_memory_map_static",
+        "buffer_memory_caching": "buffer_memory_caching_static",
+        "data_sizeof": 6,
+        "data": [
+            0, 1, 3,
+            1, 2, 3
+            ]
+    },
+    "loading_screen::prim_stream": {
+        "type_name": "electroslag::graphics::primitive_stream_descriptor",
+        "prim_type": "primitive_type_triangle",
+        "prim_count": 2,
+        "sizeof_index": 1,
+        "ibo": "loading_screen::ibo",
+        "field_map": "loading_screen::vertex_fmt",
+        "attrib_count": 2,
+        "a0000": "loading_screen::vert_position_attrib",
+        "a0001": "loading_screen::vert_tex_coord_attrib"
+    },
+
+    // Vertex shader stage
+    "loading_screen::shader::v": {
+        "type_name": "electroslag::graphics::shader_stage_descriptor",
+        "stage_flag": "shader_stage_vertex",
+        "source_file": "loading_screen/shader/loading_screen.vert"
+    },
+
+    // Fragment shader stage
+    "loading_screen_texture": {
+        "type_name": "electroslag::graphics::shader_field",
+        "field_kind": "field_kind_uniform",
+        "field_type": "field_type_texture_handle"
+    },
+    "_loading_screen_f_uniforms::field_map": {
+        "type_name": "electroslag::graphics::shader_field_map",
+        "field_count": 1,
+        "f0000": "loading_screen_texture"
+    },
+    "_loading_screen_f_uniforms": {
+        "type_name": "electroslag::graphics::uniform_buffer_descriptor",
+        "field_map": "_loading_screen_f_uniforms::field_map"
+    },
+    "loading_screen::shader::f": {
+        "type_name": "electroslag::graphics::shader_stage_descriptor",
+        "stage_flag": "shader_stage_fragment",
+        "source_file": "loading_screen/shader/loading_screen.frag",
+        "ubo_count": 1,
+        "u0000": "_loading_screen_f_uniforms"
+    },
+
+    // Shader
+    "loading_screen::shader": {
+        "type_name": "electroslag::graphics::shader_program_descriptor",
+        "stages": [ "shader_stage_vertex", "shader_stage_fragment" ],
+        "v_stage": "loading_screen::shader::v",
+        "f_stage": "loading_screen::shader::f",
+        "vertex_field_map": "loading_screen::vertex_fmt"
+    }
+}

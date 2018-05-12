@@ -1,0 +1,117 @@
+~~ Work Items ~~
+
+- mesh
+ - light object
+ - Write stock shaders for gltf2 PBR
+ - Dwarf gltf2 material is wrong (no specular / bump maps?)
+
+- ui
+ - Allow for a fixed aspect ratio in windowed mode
+ - Generate a single window resize event at the end of drag instead of many during drag
+ - Need to drop/restore mouse capture on window minimize
+
+- graphics
+ 1 name and label frame buffer objects.
+ 1 Is it possible that enqueue_command doing too many reference operations?
+ 2 direct state access
+ 2 compiled shader cache (ARB_get_program_binary)
+ 2 parallel shader compilation
+ 2 texture upload GL context
+ 3 WGL_NV_DX_interop2
+ 3 get extension list properly; glGetStringi
+ 3 arbitrary, hard-coded 2 second timeouts in object creation code
+ 3 buffer_opengl does not wait for GPU writes to be flushed before returning
+ 3 Can we be smarter and not flush on every buffer map?
+ 4 indirect draw queue
+  - shader parameters?
+  - uber-shader vrs shader subroutines
+
+- gltf2
+ - name strings
+ - cameras
+ - heirarchal transforms
+ - morph / skinning
+ - glb
+ - animation
+ - sparse buffers
+ - buffer view and inline textures
+
+- hud
+ 1 perf panel
+ 1 object browser
+ 1 type browser
+
+- built in content
+ 1 Coordinate Axis
+ 1 Skybox
+ 1 Ground Plane
+ 2 Box
+ 2 Sphere
+
+- renderer
+ 1 Add fullscreen quad pass
+ 1 LODs
+ 2 Dynamic UBO
+  - Read fields by something other than naked pointer
+  - Dynamic UBO allocation currently does not allow the dynamic UBO region to shrink
+ 3 Arena allocator for fast path (need allocator interface first)
+
+- threading
+ 2 Get and clear exceptions in worker_thread
+
+- content optimization
+ 1 merge primitive stream when possible
+ 1 merge pipeline when possible
+ 1 merge texture when possibe
+ 1 strip unused pipeline option
+ 1 strip unused scene / renderable option
+ 1 strip *_importer / composite_scene_descriptor
+ 1 strip name table
+
+- image
+ 2 Importers could allow file system monitoring
+ 3 HDR textures
+
+- misc
+ - Ensure the lifetime of database objects that are not reference counted (pointer in use? scoped?)
+ - allocator interface
+ - C++11 random number generation
+ - shrink to fit vectors
+
+- math
+ - Review assembler GLM compilation to check for SIMD
+
+- misc
+ - ship exe size
+ - Compile with MinGW or Clang for Windows
+
+~~ Math Conventions ~~
+- right handed coordinate space to match OpenGL conventions
+- vectors are treated as column vectors
+- matrices are stored column major; eg m[col][row] aka m[col] returns a column
+  |m00 m10 m20 m30|         |m0 m4 m8  m12|
+  |m01 m11 m21 m31|         |m1 m5 m9  m13|
+  |m02 m12 m22 m32|         |m2 m6 m10 m14|
+  |m03 m13 m23 m33|         |m3 m7 m11 m15|
+- A column vector is multiplied by a matrix on the right:
+  |m00 m10 m20 m30| |v0|   |(m00 * v0) + (m10 * v1) + (m20 * v2) + (m30 * v3)|
+  |m01 m11 m21 m31| |v1| = |(m01 * v0) + (m11 * v1) + (m21 * v2) + (m31 * v3)|
+  |m02 m12 m22 m32| |v2|   |(m02 * v0) + (m12 * v1) + (m22 * v2) + (m32 * v3)|
+  |m03 m13 m23 m33| |v3|   |(m03 * v0) + (m13 * v1) + (m23 * v2) + (m33 * v3)|
+- Transformations on the right of a matrix product applied are first geometrically;
+  If T, S, and R and transformations, then the product M = T * S * R will apply
+  R first, then S, the T, geometrically.
+- Translation lives in column 3 (m12, m13, m14) when transforming homogeneous vectors
+
+- Eye space places the camera at (0, 0, 0), looking in the direction of the -Z axis,
+  which is the standard for OpenGL.
+- Clip space dimensions [[-1, 1], [-1, 1], [0,1]], where geometry with (x,y)
+  normalized device coordinates of (-1,-1) correspond to the lower-left corner of the
+  viewport and the near and far planes correspond to z normalized device coordinates
+  of 0 and +1, respectively.
+
+~~ Method Nomenclature ~~
+has_ = Return bool if a value exists
+get_ = Always returns the requested value; may lazy create the value if needed
+find_ = Returns the requested value, throws if the value does not exist
+locate_ = Returns the requested value, returns false if the value does not exist

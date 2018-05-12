@@ -1,0 +1,4 @@
+## Ignore temporary files, cache file, and build results.
+
+# Build result directories
+build/

@@ -1,0 +1,163 @@
+{
+    "asset": {
+        "version": "2.0",
+        "generator": "Open Asset Import Library (assimp v4.0.80939749)"
+    },
+    "accessors": [
+        {
+            "bufferView": 0,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 37002,
+            "type": "VEC3",
+            "max": [
+                0.05806199833750725,
+                0.20291399955749513,
+                0.05463999882340431
+            ],
+            "min": [
+                -0.055156998336315158,
+                -0.000598000013269484,
+                -0.060759998857975009
+            ]
+        },
+        {
+            "bufferView": 1,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 37002,
+            "type": "VEC3",
+            "max": [
+                0.9995629787445068,
+                0.9983360171318054,
+                0.9997869729995728
+            ],
+            "min": [
+                -0.99993497133255,
+                -0.9999909996986389,
+                -0.9997079968452454
+            ]
+        },
+        {
+            "bufferView": 2,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 37002,
+            "type": "VEC2",
+            "max": [
+                0.9939699769020081,
+                0.9979599714279175
+            ],
+            "min": [
+                0.00203999993391335,
+                0.004159986972808838
+            ]
+        },
+        {
+            "bufferView": 3,
+            "byteOffset": 0,
+            "componentType": 5123,
+            "count": 37002,
+            "type": "SCALAR",
+            "max": [
+                37001.0
+            ],
+            "min": [
+                0.0
+            ]
+        }
+    ],
+    "buffers": [
+        {
+            "byteLength": 1258068,
+            "uri": "dwarf.bin"
+        }
+    ],
+    "bufferViews": [
+        {
+            "buffer": 0,
+            "byteOffset": 0,
+            "byteLength": 444024,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 444024,
+            "byteLength": 444024,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 888048,
+            "byteLength": 296016,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 1184064,
+            "byteLength": 74004,
+            "target": 34963
+        }
+    ],
+    "images": [
+        {
+            "uri": "dwarf_color.dds"
+        }
+    ],
+    "materials": [
+        {
+            "name": "DefaultMaterial",
+            "pbrMetallicRoughness": {
+                "baseColorTexture": {
+                    "index": 0
+                },
+                "baseColorFactor": [
+                    0.6000000238418579,
+                    0.6000000238418579,
+                    0.6000000238418579,
+                    1.0
+                ],
+                "metallicFactor": 0.0
+            }
+        }
+    ],
+    "meshes": [
+        {
+            "name": "Dwarf_2_Low_Dwarf_2_Low",
+            "primitives": [
+                {
+                    "mode": 4,
+                    "material": 0,
+                    "indices": 3,
+                    "attributes": {
+                        "POSITION": 0,
+                        "NORMAL": 1,
+                        "TEXCOORD_0": 2
+                    }
+                }
+            ]
+        }
+    ],
+    "nodes": [
+        {
+            "mesh": 0
+        }
+    ],
+    "samplers": [
+        {}
+    ],
+    "scenes": [
+        {
+            "nodes": [
+                0
+            ]
+        }
+    ],
+    "textures": [
+        {
+            "source": 0,
+            "sampler": 0
+        }
+    ],
+    "scene": 0
+}
