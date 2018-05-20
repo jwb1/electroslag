@@ -139,7 +139,7 @@ namespace electroslag {
             ELECTROSLAG_CHECK(is_open());
 
 #if defined(_WIN32)
-            void* entry_point = GetProcAddress(m_handle, entry_point_name.c_str());
+            void* entry_point = reinterpret_cast<void*>(GetProcAddress(m_handle, entry_point_name.c_str()));
             if (!entry_point) {
                 throw win32_api_failure("GetProcAddress");
             }

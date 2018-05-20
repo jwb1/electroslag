@@ -34,18 +34,13 @@ namespace electroslag {
                     throw load_object_failure("source_file");
                 }
 
-                std::filesystem::path source_path(source_file);
+                boost::filesystem::path source_path(source_file);
                 ELECTROSLAG_CHECK(source_path.has_filename());
 
-                // This method seems to have been renamed between VS 2013 and VS 2015.
-#if defined(_MSC_VER) && (_MSC_VER <= 1800)
-                if (!source_path.is_complete()) {
-#else
                 if (!source_path.is_absolute()) {
-#endif
-                    std::filesystem::path combined_dir(ar->get_base_directory());
+                    boost::filesystem::path combined_dir(ar->get_base_directory());
                     combined_dir /= source_path;
-                    source_path = std::filesystem::canonical(combined_dir);
+                    source_path = boost::filesystem::canonical(combined_dir);
                 }
 
                 file_stream shader_stream;

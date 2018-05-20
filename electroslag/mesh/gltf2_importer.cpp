@@ -52,18 +52,13 @@ namespace electroslag {
                 throw load_object_failure("file_name");
             }
 
-            std::filesystem::path dir(file_name);
+            boost::filesystem::path dir(file_name);
             ELECTROSLAG_CHECK(dir.has_filename());
 
-            // This method seems to have been renamed between VS 2013 and VS 2015.
-#if defined(_MSC_VER) && (_MSC_VER <= 1800)
-            if (!dir.is_complete()) {
-#else
             if (!dir.is_absolute()) {
-#endif
-                std::filesystem::path combined_dir(ar->get_base_directory());
+                boost::filesystem::path combined_dir(ar->get_base_directory());
                 combined_dir /= dir;
-                dir = std::filesystem::canonical(combined_dir);
+                dir = boost::filesystem::canonical(combined_dir);
             }
 
             std::string object_prefix("");
@@ -277,10 +272,10 @@ namespace electroslag {
                         }
                         else {
                             // All file URIs are relative to the gltf2 file path.
-                            std::filesystem::path buffer_path(m_file_name);
+                            boost::filesystem::path buffer_path(m_file_name);
                             buffer_path = buffer_path.remove_filename();
                             buffer_path /= uri;
-                            buffer_path = std::filesystem::canonical(buffer_path);
+                            buffer_path = boost::filesystem::canonical(buffer_path);
 
                             file_stream buffer_stream;
                             buffer_stream.open(buffer_path.string(), file_stream_access_mode_read);
@@ -509,10 +504,10 @@ namespace electroslag {
                     }
                     else {
                         // All file URIs are relative to the gltf2 file path.
-                        std::filesystem::path image_path(m_file_name);
+                        boost::filesystem::path image_path(m_file_name);
                         image_path = image_path.remove_filename();
                         image_path /= uri;
-                        image_path = std::filesystem::canonical(image_path);
+                        image_path = boost::filesystem::canonical(image_path);
 
                         m_image_paths.emplace_back(image_path.generic_string());
                     }

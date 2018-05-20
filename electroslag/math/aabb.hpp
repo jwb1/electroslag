@@ -112,17 +112,17 @@ namespace electroslag {
             glm::tvec3<T, P> m_max_corner;
         };
 
-        template <typename T, glm::precision P>
+        template<class T, glm::precision P>
         taabb<T, P> operator *(taabb<T, P> const& aabb, glm::tmat4x4<T, P> const& m)
         {
             // http://dev.theomader.com/transform-bounding-boxes/
             glm::tvec3<T, P> const& min_corner = aabb.get_min_corner();
             glm::tvec3<T, P> const& max_corner = aabb.get_max_corner();
 
-            glm::tmat4x4<T, P>::col_type const& right       = m[0];
-            glm::tmat4x4<T, P>::col_type const& up          = m[1];
-            glm::tmat4x4<T, P>::col_type const& backward    = m[2];
-            glm::tmat4x4<T, P>::col_type const& translation = m[3];
+            typename glm::tmat4x4<T, P>::col_type const& right       = m[0];
+            typename glm::tmat4x4<T, P>::col_type const& up          = m[1];
+            typename glm::tmat4x4<T, P>::col_type const& backward    = m[2];
+            typename glm::tmat4x4<T, P>::col_type const& translation = m[3];
 
             glm::tvec3<T, P> xa(right * min_corner.x);
             glm::tvec3<T, P> xb(right * max_corner.x);

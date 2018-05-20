@@ -15,6 +15,15 @@
 
 #pragma once
 
+// Detect compiler.
+#if defined(__clang__)
+#define ELECTROSLAG_COMPILER_CLANG
+#elif defined(_MSC_VER)
+#define ELECTROSLAG_COMPILER_MSVC
+#else
+#error Can not define ELECTROSLAG_COMPILER!
+#endif
+
 // Decode ELECTROSLAG_BUILD flag; replicated in resource.rc
 #if ELECTROSLAG_BUILD==1
 #define ELECTROSLAG_BUILD_DEBUG
@@ -47,12 +56,12 @@
 #endif
 
 // CRT debugging features.
-#if defined(ELECTROSLAG_BUILD_DEBUG) & defined(_MSC_VER)
+#if defined(ELECTROSLAG_BUILD_DEBUG) && defined(ELECTROSLAG_COMPILER_MSVC)
 #include <crtdbg.h>
 #endif
 
 // Compiler Intrinsics
-#if defined(_MSC_VER)
+#if defined(ELECTROSLAG_COMPILER_MSVC)
 #include <intrin.h>
 #include <xmmintrin.h>
 #include <pmmintrin.h>
@@ -69,7 +78,7 @@
 #include <cstdio>
 #include <cstdlib>
 
-#if defined(_MSC_VER)
+#if defined(ELECTROSLAG_COMPILER_MSVC)
 #include <process.h>
 #endif
 
@@ -88,17 +97,9 @@
 #include <deque>
 #include <algorithm>
 
-#if defined(_MSC_VER)
-#include <filesystem>
-namespace std {
-    namespace filesystem = ::std::tr2::sys;
-}
-#else
-#include <experimental/filesystem>
-namespace std {
-    namespace fileystem = ::std::experimental::filesystem::v1;
-}
-#endif
+// Boost
+#define BOOST_FILESYSTEM_NO_DEPRECATED
+#include <boost/filesystem.hpp>
 
 // OpenGL
 #include "electroslag/graphics/glloadgen/gl_core_4_5.hpp"
@@ -114,7 +115,7 @@ namespace std {
 #include "electroslag/reference.hpp"
 
 // GLM
-#if defined(_MSC_VER)
+#if defined(ELECTROSLAG_COMPILER_MSVC)
 #pragma warning (push)
 #pragma warning (disable : 4324) // warning C4324: structure was padded due to __declspec(align())
 #endif
@@ -127,7 +128,7 @@ namespace std {
 #include "glm/gtc/matrix_transform.hpp"
 #include "glm/gtx/transform.hpp"
 #include "electroslag/math/glm_overload.hpp"
-#if defined(_MSC_VER)
+#if defined(ELECTROSLAG_COMPILER_MSVC)
 #pragma warning (pop)
 #endif
 
@@ -149,22 +150,20 @@ namespace std {
 #endif
 
 // Visual Leak Debugger
-#if defined(_MSC_VER) && defined(ELECTROSLAG_BUILD_DEBUG)
-#include <vld.h>
+#if defined(ELECTROSLAG_COMPILER_MSVC) && defined(ELECTROSLAG_BUILD_DEBUG)
+//#include <vld.h>
 #endif
 
 // Compiler Options
-#if defined(_MSC_VER)
+#if defined(ELECTROSLAG_COMPILER_MSVC)
 #pragma warning (disable : 4324) // warning C4324: structure was padded due to __declspec(align())
 #pragma warning (disable : 4505) // warning C4505: unreferenced local function has been removed
 
 // Not cool: the constexpr hash functions generate this warning at the call site in Visual
-// C++ 2015, and the only way to suppress it is by shutting off the warning entirely, which
-// is potentially dangerous.
+// C++ 2015 and 2017, and the only way to suppress it is by shutting off the warning entirely,
+// which is potentially dangerous.
 // https://connect.microsoft.com/VisualStudio/feedback/details/2636327/warning-c4307-cannot-be-disabled-within-or-immediately-around-a-constexpr-function
-#if defined(_MSC_VER) && (_MSC_VER == 1900)
 #pragma warning (disable : 4307) // warning C4307 : '*' : integral constant overflow
-#endif
 
 namespace std {
     inline int fseeko(FILE* f, long long offset, int whence)
@@ -175,6 +174,20 @@ namespace std {
     inline long long ftello(FILE* f)
     {
         return (::_ftelli64(f));
+    }
+}
+#endif
+
+#if defined(ELECTROSLAG_COMPILER_CLANG)
+namespace std {
+    inline int fseeko(FILE* f, long long offset, int whence)
+    {
+        return (::fseeko(f, offset, whence));
+    }
+
+    inline long long ftello(FILE* f)
+    {
+        return (::ftello(f));
     }
 }
 #endif

@@ -107,7 +107,7 @@ namespace electroslag {
         file_stream_access_mode m_access_mode;
         file_stream_cache_mode m_cache_mode;
 
-        void* m_buffer;
+        byte* m_buffer;
         long long m_buffer_size;
         long long m_buffer_offset;
 

@@ -151,7 +151,7 @@ namespace electroslag {
         int m_log_enable_bits;
         int m_log_output_bits;
 
-#if defined(_MSC_VER) && defined(ELECTROSLAG_BUILD_DEBUG)
+#if defined(ELECTROSLAG_COMPILER_MSVC) && defined(ELECTROSLAG_BUILD_DEBUG)
         bool m_report_hook_set;
 
         static int crt_dbg_report_logger(int report_type, char* message, int* return_value);

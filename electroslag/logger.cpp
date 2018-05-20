@@ -29,14 +29,14 @@ namespace electroslag {
         : m_mutex(ELECTROSLAG_STRING_AND_HASH("m:logger"))
         , m_log_enable_bits(default_log_enable_bits)
         , m_log_output_bits(default_log_output_bits)
-#if defined(_MSC_VER) && defined(ELECTROSLAG_BUILD_DEBUG)
+#if defined(ELECTROSLAG_COMPILER_MSVC) && defined(ELECTROSLAG_BUILD_DEBUG)
         , m_report_hook_set(false)
 #endif 
     {}
 
     void logger::initialize()
     {
-#if defined(_MSC_VER) && defined(ELECTROSLAG_BUILD_DEBUG)
+#if defined(ELECTROSLAG_COMPILER_MSVC) && defined(ELECTROSLAG_BUILD_DEBUG)
         threading::lock_guard logger_lock(&m_mutex);
         if (!m_report_hook_set) {
             if (_CrtSetReportHook2(_CRT_RPTHOOK_INSTALL, &crt_dbg_report_logger) >= 0) {
@@ -48,7 +48,7 @@ namespace electroslag {
 
     void logger::shutdown()
     {
-#if defined(_MSC_VER) && defined(ELECTROSLAG_BUILD_DEBUG)
+#if defined(ELECTROSLAG_COMPILER_MSVC) && defined(ELECTROSLAG_BUILD_DEBUG)
         threading::lock_guard logger_lock(&m_mutex);
         if (m_report_hook_set) {
             _CrtSetReportHook2(_CRT_RPTHOOK_REMOVE, &crt_dbg_report_logger);
@@ -210,7 +210,7 @@ namespace electroslag {
             );
     }
 
-#if defined(_MSC_VER) && defined(ELECTROSLAG_BUILD_DEBUG)
+#if defined(ELECTROSLAG_COMPILER_MSVC) && defined(ELECTROSLAG_BUILD_DEBUG)
     // static
     int logger::crt_dbg_report_logger(
         int report_type,

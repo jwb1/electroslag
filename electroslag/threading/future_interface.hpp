@@ -44,9 +44,9 @@ namespace electroslag {
             future_interface()
             {}
 
-            template<class T>
+            template<class U>
             explicit future_interface(
-                reference<T>& dependency
+                reference<U>& dependency
                 )
                 : work_item_interface(dependency)
             {}

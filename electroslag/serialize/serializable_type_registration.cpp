@@ -29,7 +29,7 @@ namespace electroslag {
             , m_referenced(referenced)
             , m_importer(importer)
         {
-#if defined(_MSC_VER)
+#if defined(ELECTROSLAG_COMPILER_MSVC)
             // Visual C++ RTTI uses "class <fully qualified name>"
             // We want just the fully qualified name, so drop the first 6 characters
             m_name = info.name() + 6;

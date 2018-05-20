@@ -189,11 +189,11 @@ namespace electroslag {
 
             bool dump_content = false;
             std::string content_file;
-            if (std::filesystem::exists(bin_path)) {
+            if (boost::filesystem::exists(bin_path)) {
                 content_file = bin_path;
             }
 #if !defined(ELECTROSLAG_BUILD_SHIP)
-            else if (std::filesystem::exists(json_path)) {
+            else if (boost::filesystem::exists(json_path)) {
                 content_file = json_path;
             }
 

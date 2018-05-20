@@ -38,18 +38,13 @@ namespace electroslag {
                 throw load_object_failure("file_name");
             }
 
-            std::filesystem::path dir(file_name);
+            boost::filesystem::path dir(file_name);
             ELECTROSLAG_CHECK(dir.has_filename());
 
-            // This method seems to have been renamed between VS 2013 and VS 2015.
-#if defined(_MSC_VER) && (_MSC_VER <= 1800)
-            if (!dir.is_complete()) {
-#else
             if (!dir.is_absolute()) {
-#endif
-                std::filesystem::path combined_dir(ar->get_base_directory());
+                boost::filesystem::path combined_dir(ar->get_base_directory());
                 combined_dir /= dir;
-                dir = std::filesystem::canonical(combined_dir);
+                dir = boost::filesystem::canonical(combined_dir);
             }
 
             std::string object_name("");

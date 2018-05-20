@@ -18,7 +18,7 @@
 // The OS malloc implementation will ensure all returned pointers are aligned to at least this.
 // Windows minimum alignment documented to be 16 here:
 // https://msdn.microsoft.com/en-us/library/6ewkz86d.aspx
-#if defined(_MSC_VER)
+#if defined(ELECTROSLAG_COMPILER_MSVC)
 #if defined(_WIN64)
 #define ELECTROSLAG_NATURAL_HEAP_ALIGN 16
 #elif defined(_WIN32)

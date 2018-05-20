@@ -94,7 +94,7 @@ namespace electroslag {
             {}
 
             explicit float_property(float initial_value)
-                : property(initial_value)
+                : property<float, NameHash>(initial_value)
             {}
         };
 
@@ -105,7 +105,7 @@ namespace electroslag {
             {}
 
             explicit vec2_property(glm::f32vec2 const& initial_value)
-                : property(initial_value)
+                : property<glm::f32vec2, NameHash>(initial_value)
             {}
         };
 
@@ -116,7 +116,7 @@ namespace electroslag {
             {}
 
             explicit vec3_property(glm::f32vec3 const& initial_value)
-                : property(initial_value)
+                : property<glm::f32vec3, NameHash>(initial_value)
             {}
         };
 
@@ -127,7 +127,7 @@ namespace electroslag {
             {}
 
             explicit vec4_property(glm::f32vec4 const& initial_value)
-                : property(initial_value)
+                : property<glm::f32vec4, NameHash>(initial_value)
             {}
         };
 
@@ -138,7 +138,7 @@ namespace electroslag {
             {}
 
             explicit quat_property(glm::f32quat const& initial_value)
-                : property(initial_value)
+                : property<glm::f32quat, NameHash>(initial_value)
             {}
         };
 
@@ -149,7 +149,7 @@ namespace electroslag {
             {}
 
             explicit mat4_property(glm::f32mat4 const& initial_value)
-                : property(initial_value)
+                : property<glm::f32mat4, NameHash>(initial_value)
             {}
         };
     }

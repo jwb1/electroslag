@@ -50,7 +50,7 @@ namespace electroslag {
 
         if (m_cache_mode == file_stream_cache_mode_buffered) {
             ELECTROSLAG_CHECK(m_buffer_size - m_buffer_offset >= size);
-            memcpy(buffer, static_cast<byte*>(m_buffer) + m_buffer_offset, size);
+            memcpy(buffer, m_buffer + m_buffer_offset, size);
             m_buffer_offset += size;
         }
         else if (m_cache_mode == file_stream_cache_mode_default) {
@@ -71,7 +71,7 @@ namespace electroslag {
 
         if (m_cache_mode == file_stream_cache_mode_buffered) {
             ELECTROSLAG_CHECK(m_buffer_size - m_buffer_offset >= size);
-            memcpy(static_cast<byte*>(m_buffer) + m_buffer_offset, buffer, size);
+            memcpy(m_buffer + m_buffer_offset, buffer, size);
             m_buffer_offset += size;
         }
         else if (m_cache_mode == file_stream_cache_mode_default) {

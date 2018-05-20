@@ -807,9 +807,17 @@ namespace electroslag {
     }
 }
 
-#if defined(_MSC_VER)
+#if defined(_WIN32)
 // Force the NVidia GPU on Optimus systems
+#if defined(ELECTROSLAG_COMPILER_MSVC)
 extern "C" {
     __declspec(dllexport, selectany) DWORD NvOptimusEnablement = 0x00000001;
 }
+#elif defined(ELECTROSLAG_COMPILER_CLANG)
+extern "C" {
+    __attribute__((dllexport)) __attribute__((selectany)) DWORD NvOptimusEnablement = 0x00000001;
+}
+#else
+#error How to declare NvOptimusEnablement with other compilers?
+#endif
 #endif

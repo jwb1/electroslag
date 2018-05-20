@@ -62,7 +62,7 @@ namespace electroslag {
             // gltf2_importer methods.
             typedef threading::future_interface<renderer::instance_descriptor::ref> import_future;
 
-            import_future::ref const& get_future() const
+            typename import_future::ref const& get_future() const
             {
                 return (m_async_loader);
             }
