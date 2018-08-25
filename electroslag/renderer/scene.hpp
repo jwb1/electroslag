@@ -149,6 +149,11 @@ namespace electroslag {
 
             explicit scene(instance_descriptor::ref const& scene_desc);
 
+            void load_instance(
+                instance_descriptor::ref const& instance_desc,
+                transform_descriptor::ref const& parent_transform_desc
+                );
+
             void make_transform_work_item(frame_details* this_frame_details);
             void make_render_work_item(frame_details* this_frame_details);
 

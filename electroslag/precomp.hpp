@@ -16,9 +16,7 @@
 #pragma once
 
 // Detect compiler.
-#if defined(__clang__)
-#define ELECTROSLAG_COMPILER_CLANG
-#elif defined(_MSC_VER)
+#if defined(_MSC_VER)
 #define ELECTROSLAG_COMPILER_MSVC
 #else
 #error Can not define ELECTROSLAG_COMPILER!
@@ -95,11 +93,8 @@
 #include <forward_list>
 #include <unordered_map>
 #include <deque>
+#include <filesystem>
 #include <algorithm>
-
-// Boost
-#define BOOST_FILESYSTEM_NO_DEPRECATED
-#include <boost/filesystem.hpp>
 
 // OpenGL
 #include "electroslag/graphics/glloadgen/gl_core_4_5.hpp"
@@ -166,6 +161,8 @@
 #pragma warning (disable : 4307) // warning C4307 : '*' : integral constant overflow
 
 namespace std {
+    namespace filesystem = ::std::tr2::sys;
+
     inline int fseeko(FILE* f, long long offset, int whence)
     {
         return (::_fseeki64(f, offset, whence));
@@ -174,20 +171,6 @@ namespace std {
     inline long long ftello(FILE* f)
     {
         return (::_ftelli64(f));
-    }
-}
-#endif
-
-#if defined(ELECTROSLAG_COMPILER_CLANG)
-namespace std {
-    inline int fseeko(FILE* f, long long offset, int whence)
-    {
-        return (::fseeko(f, offset, whence));
-    }
-
-    inline long long ftello(FILE* f)
-    {
-        return (::ftello(f));
     }
 }
 #endif

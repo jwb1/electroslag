@@ -1,0 +1,856 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Ship|x64">
+      <Configuration>Ship</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{AA0396CD-FF40-436A-A575-E1564F7B7629}</ProjectGuid>
+    <RootNamespace>electroslag</RootNamespace>
+    <ProjectName>electroslag</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Ship|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Ship|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(SolutionDir)output\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)intermediate\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IncludePath>$(VLD_SDK_PATH)\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(VLD_SDK_PATH)\lib\Win64;$(LibraryPath)</LibraryPath>
+    <CustomBuildAfterTargets>BuildLink</CustomBuildAfterTargets>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(SolutionDir)output\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)intermediate\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IncludePath>$(VLD_SDK_PATH)\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(VLD_SDK_PATH)\lib\Win64;$(LibraryPath)</LibraryPath>
+    <CustomBuildAfterTargets>BuildLink</CustomBuildAfterTargets>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Ship|x64'">
+    <OutDir>$(SolutionDir)output\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)intermediate\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IncludePath>$(VLD_SDK_PATH)\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(VLD_SDK_PATH)\lib\Win64;$(LibraryPath)</LibraryPath>
+    <CustomBuildAfterTargets>BuildLink</CustomBuildAfterTargets>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level4</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <PreprocessorDefinitions>ELECTROSLAG_BUILD=1</PreprocessorDefinitions>
+      <EnableEnhancedInstructionSet>AdvancedVectorExtensions</EnableEnhancedInstructionSet>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <AdditionalIncludeDirectories>$(SolutionDir);$(SolutionDir)electroslag\texture\;$(SolutionDir)electroslag\math\;$(SolutionDir)electroslag\serialize\</AdditionalIncludeDirectories>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>electroslag/precomp.hpp</PrecompiledHeaderFile>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <MinimalRebuild>false</MinimalRebuild>
+      <AdditionalOptions>/Zm256 %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>gdi32.lib;user32.lib;winmm.lib;opengl32.lib;psapi.lib</AdditionalDependencies>
+      <SubSystem>Windows</SubSystem>
+      <GenerateMapFile>true</GenerateMapFile>
+      <OutputFile>$(OutDir)$(TargetName)_nores$(TargetExt)</OutputFile>
+      <EntryPointSymbol>mainCRTStartup</EntryPointSymbol>
+    </Link>
+    <ResourceCompile>
+      <PreprocessorDefinitions>ELECTROSLAG_BUILD=1</PreprocessorDefinitions>
+    </ResourceCompile>
+    <CustomBuildStep>
+      <Command>"$(SolutionDir)electroslag\resources\content\build_content.bat" "$(OutDir)$(TargetName)_nores$(TargetExt)"</Command>
+      <Message>Building content</Message>
+      <Outputs>$(TargetPath);%(Outputs)</Outputs>
+      <Inputs>$(OutDir)$(TargetName)_nores$(TargetExt)</Inputs>
+    </CustomBuildStep>
+    <PostBuildEvent />
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level4</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <PreprocessorDefinitions>ELECTROSLAG_BUILD=2</PreprocessorDefinitions>
+      <EnableEnhancedInstructionSet>AdvancedVectorExtensions</EnableEnhancedInstructionSet>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <AdditionalIncludeDirectories>$(SolutionDir);$(SolutionDir)electroslag\texture\;$(SolutionDir)electroslag\math\;$(SolutionDir)electroslag\serialize\</AdditionalIncludeDirectories>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>electroslag/precomp.hpp</PrecompiledHeaderFile>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <AdditionalOptions>/Zm256 /Zo %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>gdi32.lib;user32.lib;winmm.lib;opengl32.lib;psapi.lib</AdditionalDependencies>
+      <SubSystem>Windows</SubSystem>
+      <GenerateMapFile>true</GenerateMapFile>
+      <OutputFile>$(OutDir)$(TargetName)_nores$(TargetExt)</OutputFile>
+      <EntryPointSymbol>mainCRTStartup</EntryPointSymbol>
+    </Link>
+    <ResourceCompile>
+      <PreprocessorDefinitions>ELECTROSLAG_BUILD=2</PreprocessorDefinitions>
+    </ResourceCompile>
+    <CustomBuildStep>
+      <Command>"$(SolutionDir)electroslag\resources\content\build_content.bat" "$(OutDir)$(TargetName)_nores$(TargetExt)"</Command>
+      <Message>Building content</Message>
+      <Outputs>$(TargetPath);%(Outputs)</Outputs>
+      <Inputs>$(OutDir)$(TargetName)_nores$(TargetExt)</Inputs>
+    </CustomBuildStep>
+    <PostBuildEvent />
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Ship|x64'">
+    <ClCompile>
+      <WarningLevel>Level4</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <PreprocessorDefinitions>ELECTROSLAG_BUILD=3</PreprocessorDefinitions>
+      <EnableEnhancedInstructionSet>AdvancedVectorExtensions</EnableEnhancedInstructionSet>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <AdditionalIncludeDirectories>$(SolutionDir);$(SolutionDir)electroslag\texture\;$(SolutionDir)electroslag\math\;$(SolutionDir)electroslag\serialize\</AdditionalIncludeDirectories>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>electroslag/precomp.hpp</PrecompiledHeaderFile>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <AdditionalOptions>/Zm256 /Zo %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>gdi32.lib;user32.lib;winmm.lib;opengl32.lib;psapi.lib</AdditionalDependencies>
+      <SubSystem>Windows</SubSystem>
+      <GenerateMapFile>true</GenerateMapFile>
+      <OutputFile>$(OutDir)$(TargetName)_nores$(TargetExt)</OutputFile>
+      <EntryPointSymbol>mainCRTStartup</EntryPointSymbol>
+    </Link>
+    <ResourceCompile>
+      <PreprocessorDefinitions>ELECTROSLAG_BUILD=2</PreprocessorDefinitions>
+    </ResourceCompile>
+    <CustomBuildStep>
+      <Command>"$(SolutionDir)electroslag\resources\content\use_content.bat" "$(OutDir)$(TargetName)_nores$(TargetExt)" "$(SolutionDir)output\$(Platform)\Release"</Command>
+      <Message>Copying content from Release build</Message>
+      <Outputs>$(TargetPath);%(Outputs)</Outputs>
+      <Inputs>$(OutDir)$(TargetName)_nores$(TargetExt)</Inputs>
+    </CustomBuildStep>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="electroslag\animation\animated_object.hpp" />
+    <ClInclude Include="electroslag\animation\constant_value_controller.hpp" />
+    <ClInclude Include="electroslag\animation\property.hpp" />
+    <ClInclude Include="electroslag\animation\property_controller_interface.hpp" />
+    <ClInclude Include="electroslag\animation\property_controller_typed_interface.hpp" />
+    <ClInclude Include="electroslag\animation\property_manager.hpp" />
+    <ClInclude Include="electroslag\animation\property_manager_interface.hpp" />
+    <ClInclude Include="electroslag\animation\velocity_controller.hpp" />
+    <ClInclude Include="electroslag\application\application.hpp" />
+    <ClInclude Include="electroslag\application\loading_screen.hpp" />
+    <ClInclude Include="electroslag\buffer_stream.hpp" />
+    <ClInclude Include="electroslag\dynamic_array.hpp" />
+    <ClInclude Include="electroslag\graphics\buffer_descriptor.hpp" />
+    <ClInclude Include="electroslag\graphics\context_capability_interface.hpp" />
+    <ClInclude Include="electroslag\graphics\glloadgen\gl_core_4_5.hpp" />
+    <ClInclude Include="electroslag\graphics\glloadgen\wgl_core_4_5.hpp" />
+    <ClInclude Include="electroslag\graphics\serialized_graphics_types.hpp" />
+    <ClInclude Include="electroslag\graphics\shader_field_map.hpp" />
+    <ClInclude Include="electroslag\graphics\shader_stage_descriptor.hpp" />
+    <ClInclude Include="electroslag\graphics\sub_context_opengl.hpp" />
+    <ClInclude Include="electroslag\graphics\sync_interface.hpp" />
+    <ClInclude Include="electroslag\graphics\sync_opengl.hpp" />
+    <ClInclude Include="electroslag\graphics\sync_thread_opengl.hpp" />
+    <ClInclude Include="electroslag\math\aabb.hpp" />
+    <ClInclude Include="electroslag\math\glm\common.hpp" />
+    <ClInclude Include="electroslag\math\glm\detail\func_common.hpp" />
+    <ClInclude Include="electroslag\math\glm\detail\func_exponential.hpp" />
+    <ClInclude Include="electroslag\math\glm\detail\func_geometric.hpp" />
+    <ClInclude Include="electroslag\math\glm\detail\func_integer.hpp" />
+    <ClInclude Include="electroslag\math\glm\detail\func_matrix.hpp" />
+    <ClInclude Include="electroslag\math\glm\detail\func_packing.hpp" />
+    <ClInclude Include="electroslag\math\glm\detail\func_trigonometric.hpp" />
+    <ClInclude Include="electroslag\math\glm\detail\func_vector_relational.hpp" />
+    <ClInclude Include="electroslag\math\glm\detail\precision.hpp" />
+    <ClInclude Include="electroslag\math\glm\detail\setup.hpp" />
+    <ClInclude Include="electroslag\math\glm\detail\type_float.hpp" />
+    <ClInclude Include="electroslag\math\glm\detail\type_gentype.hpp" />
+    <ClInclude Include="electroslag\math\glm\detail\type_half.hpp" />
+    <ClInclude Include="electroslag\math\glm\detail\type_int.hpp" />
+    <ClInclude Include="electroslag\math\glm\detail\type_mat.hpp" />
+    <ClInclude Include="electroslag\math\glm\detail\type_mat2x2.hpp" />
+    <ClInclude Include="electroslag\math\glm\detail\type_mat2x3.hpp" />
+    <ClInclude Include="electroslag\math\glm\detail\type_mat2x4.hpp" />
+    <ClInclude Include="electroslag\math\glm\detail\type_mat3x2.hpp" />
+    <ClInclude Include="electroslag\math\glm\detail\type_mat3x3.hpp" />
+    <ClInclude Include="electroslag\math\glm\detail\type_mat3x4.hpp" />
+    <ClInclude Include="electroslag\math\glm\detail\type_mat4x2.hpp" />
+    <ClInclude Include="electroslag\math\glm\detail\type_mat4x3.hpp" />
+    <ClInclude Include="electroslag\math\glm\detail\type_mat4x4.hpp" />
+    <ClInclude Include="electroslag\math\glm\detail\type_vec.hpp" />
+    <ClInclude Include="electroslag\math\glm\detail\type_vec1.hpp" />
+    <ClInclude Include="electroslag\math\glm\detail\type_vec2.hpp" />
+    <ClInclude Include="electroslag\math\glm\detail\type_vec3.hpp" />
+    <ClInclude Include="electroslag\math\glm\detail\type_vec4.hpp" />
+    <ClInclude Include="electroslag\math\glm\detail\_features.hpp" />
+    <ClInclude Include="electroslag\math\glm\detail\_fixes.hpp" />
+    <ClInclude Include="electroslag\math\glm\detail\_noise.hpp" />
+    <ClInclude Include="electroslag\math\glm\detail\_swizzle.hpp" />
+    <ClInclude Include="electroslag\math\glm\detail\_swizzle_func.hpp" />
+    <ClInclude Include="electroslag\math\glm\detail\_vectorize.hpp" />
+    <ClInclude Include="electroslag\math\glm\exponential.hpp" />
+    <ClInclude Include="electroslag\math\glm\ext.hpp" />
+    <ClInclude Include="electroslag\math\glm\fwd.hpp" />
+    <ClInclude Include="electroslag\math\glm\geometric.hpp" />
+    <ClInclude Include="electroslag\math\glm\glm.hpp" />
+    <ClInclude Include="electroslag\math\glm\gtc\bitfield.hpp" />
+    <ClInclude Include="electroslag\math\glm\gtc\color_space.hpp" />
+    <ClInclude Include="electroslag\math\glm\gtc\constants.hpp" />
+    <ClInclude Include="electroslag\math\glm\gtc\epsilon.hpp" />
+    <ClInclude Include="electroslag\math\glm\gtc\functions.hpp" />
+    <ClInclude Include="electroslag\math\glm\gtc\integer.hpp" />
+    <ClInclude Include="electroslag\math\glm\gtc\matrix_access.hpp" />
+    <ClInclude Include="electroslag\math\glm\gtc\matrix_integer.hpp" />
+    <ClInclude Include="electroslag\math\glm\gtc\matrix_inverse.hpp" />
+    <ClInclude Include="electroslag\math\glm\gtc\matrix_transform.hpp" />
+    <ClInclude Include="electroslag\math\glm\gtc\noise.hpp" />
+    <ClInclude Include="electroslag\math\glm\gtc\packing.hpp" />
+    <ClInclude Include="electroslag\math\glm\gtc\quaternion.hpp" />
+    <ClInclude Include="electroslag\math\glm\gtc\random.hpp" />
+    <ClInclude Include="electroslag\math\glm\gtc\reciprocal.hpp" />
+    <ClInclude Include="electroslag\math\glm\gtc\round.hpp" />
+    <ClInclude Include="electroslag\math\glm\gtc\type_aligned.hpp" />
+    <ClInclude Include="electroslag\math\glm\gtc\type_precision.hpp" />
+    <ClInclude Include="electroslag\math\glm\gtc\type_ptr.hpp" />
+    <ClInclude Include="electroslag\math\glm\gtc\ulp.hpp" />
+    <ClInclude Include="electroslag\math\glm\gtc\vec1.hpp" />
+    <ClInclude Include="electroslag\math\glm\gtx\associated_min_max.hpp" />
+    <ClInclude Include="electroslag\math\glm\gtx\bit.hpp" />
+    <ClInclude Include="electroslag\math\glm\gtx\closest_point.hpp" />
+    <ClInclude Include="electroslag\math\glm\gtx\color_space.hpp" />
+    <ClInclude Include="electroslag\math\glm\gtx\color_space_YCoCg.hpp" />
+    <ClInclude Include="electroslag\math\glm\gtx\common.hpp" />
+    <ClInclude Include="electroslag\math\glm\gtx\compatibility.hpp" />
+    <ClInclude Include="electroslag\math\glm\gtx\component_wise.hpp" />
+    <ClInclude Include="electroslag\math\glm\gtx\dual_quaternion.hpp" />
+    <ClInclude Include="electroslag\math\glm\gtx\euler_angles.hpp" />
+    <ClInclude Include="electroslag\math\glm\gtx\extend.hpp" />
+    <ClInclude Include="electroslag\math\glm\gtx\extended_min_max.hpp" />
+    <ClInclude Include="electroslag\math\glm\gtx\fast_exponential.hpp" />
+    <ClInclude Include="electroslag\math\glm\gtx\fast_square_root.hpp" />
+    <ClInclude Include="electroslag\math\glm\gtx\fast_trigonometry.hpp" />
+    <ClInclude Include="electroslag\math\glm\gtx\gradient_paint.hpp" />
+    <ClInclude Include="electroslag\math\glm\gtx\handed_coordinate_space.hpp" />
+    <ClInclude Include="electroslag\math\glm\gtx\hash.hpp" />
+    <ClInclude Include="electroslag\math\glm\gtx\integer.hpp" />
+    <ClInclude Include="electroslag\math\glm\gtx\intersect.hpp" />
+    <ClInclude Include="electroslag\math\glm\gtx\io.hpp" />
+    <ClInclude Include="electroslag\math\glm\gtx\log_base.hpp" />
+    <ClInclude Include="electroslag\math\glm\gtx\matrix_cross_product.hpp" />
+    <ClInclude Include="electroslag\math\glm\gtx\matrix_decompose.hpp" />
+    <ClInclude Include="electroslag\math\glm\gtx\matrix_interpolation.hpp" />
+    <ClInclude Include="electroslag\math\glm\gtx\matrix_major_storage.hpp" />
+    <ClInclude Include="electroslag\math\glm\gtx\matrix_operation.hpp" />
+    <ClInclude Include="electroslag\math\glm\gtx\matrix_query.hpp" />
+    <ClInclude Include="electroslag\math\glm\gtx\matrix_transform_2d.hpp" />
+    <ClInclude Include="electroslag\math\glm\gtx\mixed_product.hpp" />
+    <ClInclude Include="electroslag\math\glm\gtx\norm.hpp" />
+    <ClInclude Include="electroslag\math\glm\gtx\normal.hpp" />
+    <ClInclude Include="electroslag\math\glm\gtx\normalize_dot.hpp" />
+    <ClInclude Include="electroslag\math\glm\gtx\number_precision.hpp" />
+    <ClInclude Include="electroslag\math\glm\gtx\optimum_pow.hpp" />
+    <ClInclude Include="electroslag\math\glm\gtx\orthonormalize.hpp" />
+    <ClInclude Include="electroslag\math\glm\gtx\perpendicular.hpp" />
+    <ClInclude Include="electroslag\math\glm\gtx\polar_coordinates.hpp" />
+    <ClInclude Include="electroslag\math\glm\gtx\projection.hpp" />
+    <ClInclude Include="electroslag\math\glm\gtx\quaternion.hpp" />
+    <ClInclude Include="electroslag\math\glm\gtx\range.hpp" />
+    <ClInclude Include="electroslag\math\glm\gtx\raw_data.hpp" />
+    <ClInclude Include="electroslag\math\glm\gtx\rotate_normalized_axis.hpp" />
+    <ClInclude Include="electroslag\math\glm\gtx\rotate_vector.hpp" />
+    <ClInclude Include="electroslag\math\glm\gtx\scalar_multiplication.hpp" />
+    <ClInclude Include="electroslag\math\glm\gtx\scalar_relational.hpp" />
+    <ClInclude Include="electroslag\math\glm\gtx\spline.hpp" />
+    <ClInclude Include="electroslag\math\glm\gtx\std_based_type.hpp" />
+    <ClInclude Include="electroslag\math\glm\gtx\string_cast.hpp" />
+    <ClInclude Include="electroslag\math\glm\gtx\transform.hpp" />
+    <ClInclude Include="electroslag\math\glm\gtx\transform2.hpp" />
+    <ClInclude Include="electroslag\math\glm\gtx\type_aligned.hpp" />
+    <ClInclude Include="electroslag\math\glm\gtx\type_trait.hpp" />
+    <ClInclude Include="electroslag\math\glm\gtx\vector_angle.hpp" />
+    <ClInclude Include="electroslag\math\glm\gtx\vector_query.hpp" />
+    <ClInclude Include="electroslag\math\glm\gtx\wrap.hpp" />
+    <ClInclude Include="electroslag\math\glm\integer.hpp" />
+    <ClInclude Include="electroslag\math\glm\mat2x2.hpp" />
+    <ClInclude Include="electroslag\math\glm\mat2x3.hpp" />
+    <ClInclude Include="electroslag\math\glm\mat2x4.hpp" />
+    <ClInclude Include="electroslag\math\glm\mat3x2.hpp" />
+    <ClInclude Include="electroslag\math\glm\mat3x3.hpp" />
+    <ClInclude Include="electroslag\math\glm\mat3x4.hpp" />
+    <ClInclude Include="electroslag\math\glm\mat4x2.hpp" />
+    <ClInclude Include="electroslag\math\glm\mat4x3.hpp" />
+    <ClInclude Include="electroslag\math\glm\mat4x4.hpp" />
+    <ClInclude Include="electroslag\math\glm\matrix.hpp" />
+    <ClInclude Include="electroslag\math\glm\packing.hpp" />
+    <ClInclude Include="electroslag\math\glm\simd\common.h" />
+    <ClInclude Include="electroslag\math\glm\simd\exponential.h" />
+    <ClInclude Include="electroslag\math\glm\simd\geometric.h" />
+    <ClInclude Include="electroslag\math\glm\simd\integer.h" />
+    <ClInclude Include="electroslag\math\glm\simd\matrix.h" />
+    <ClInclude Include="electroslag\math\glm\simd\packing.h" />
+    <ClInclude Include="electroslag\math\glm\simd\platform.h" />
+    <ClInclude Include="electroslag\math\glm\simd\trigonometric.h" />
+    <ClInclude Include="electroslag\math\glm\simd\vector_relational.h" />
+    <ClInclude Include="electroslag\math\glm\trigonometric.hpp" />
+    <ClInclude Include="electroslag\math\glm\vec2.hpp" />
+    <ClInclude Include="electroslag\math\glm\vec3.hpp" />
+    <ClInclude Include="electroslag\math\glm\vec4.hpp" />
+    <ClInclude Include="electroslag\math\glm\vector_relational.hpp" />
+    <ClInclude Include="electroslag\math\glm_overload.hpp" />
+    <ClInclude Include="electroslag\math\plane.hpp" />
+    <ClInclude Include="electroslag\mesh\gltf2_importer.hpp" />
+    <ClInclude Include="electroslag\name_table.hpp" />
+    <ClInclude Include="electroslag\renderer\camera_descriptor.hpp" />
+    <ClInclude Include="electroslag\renderer\camera.hpp" />
+    <ClInclude Include="electroslag\renderer\field_source_interface.hpp" />
+    <ClInclude Include="electroslag\renderer\geometry_pass.hpp" />
+    <ClInclude Include="electroslag\renderer\mesh_data_per_pass.hpp" />
+    <ClInclude Include="electroslag\renderer\pass_interface.hpp" />
+    <ClInclude Include="electroslag\renderer\pipeline_composite.hpp" />
+    <ClInclude Include="electroslag\renderer\pipeline_interface.hpp" />
+    <ClInclude Include="electroslag\renderer\pipeline_manager.hpp" />
+    <ClInclude Include="electroslag\renderer\primitive_stream_manager.hpp" />
+    <ClInclude Include="electroslag\renderer\renderable_descriptor.hpp" />
+    <ClInclude Include="electroslag\renderer\geometry_descriptor.hpp" />
+    <ClInclude Include="electroslag\renderer\pipeline_descriptor.hpp" />
+    <ClInclude Include="electroslag\renderer\mesh_interface.hpp" />
+    <ClInclude Include="electroslag\renderer\renderer_interface.hpp" />
+    <ClInclude Include="electroslag\renderer\shader_program_manager.hpp" />
+    <ClInclude Include="electroslag\renderer\static_mesh.hpp" />
+    <ClInclude Include="electroslag\renderer\texture_manager.hpp" />
+    <ClInclude Include="electroslag\renderer\transform_descriptor.hpp" />
+    <ClInclude Include="electroslag\renderer\renderer.hpp" />
+    <ClInclude Include="electroslag\renderer\renderer_types.hpp" />
+    <ClInclude Include="electroslag\renderer\scene.hpp" />
+    <ClInclude Include="electroslag\renderer\instance_descriptor.hpp" />
+    <ClInclude Include="electroslag\renderer\uniform_buffer_manager.hpp" />
+    <ClInclude Include="electroslag\resource.hpp" />
+    <ClInclude Include="electroslag\serialize\archive_interface.hpp" />
+    <ClInclude Include="electroslag\serialize\base64.hpp" />
+    <ClInclude Include="electroslag\serialize\binary_archive.hpp" />
+    <ClInclude Include="electroslag\serialize\importer_interface.hpp" />
+    <ClInclude Include="electroslag\serialize\load_record.hpp" />
+    <ClInclude Include="electroslag\serialize\rapidjson\allocators.h" />
+    <ClInclude Include="electroslag\serialize\rapidjson\document.h" />
+    <ClInclude Include="electroslag\serialize\rapidjson\encodedstream.h" />
+    <ClInclude Include="electroslag\serialize\rapidjson\encodings.h" />
+    <ClInclude Include="electroslag\serialize\rapidjson\error\en.h" />
+    <ClInclude Include="electroslag\serialize\rapidjson\error\error.h" />
+    <ClInclude Include="electroslag\serialize\rapidjson\filereadstream.h" />
+    <ClInclude Include="electroslag\serialize\rapidjson\filewritestream.h" />
+    <ClInclude Include="electroslag\serialize\rapidjson\fwd.h" />
+    <ClInclude Include="electroslag\serialize\rapidjson\internal\biginteger.h" />
+    <ClInclude Include="electroslag\serialize\rapidjson\internal\diyfp.h" />
+    <ClInclude Include="electroslag\serialize\rapidjson\internal\dtoa.h" />
+    <ClInclude Include="electroslag\serialize\rapidjson\internal\ieee754.h" />
+    <ClInclude Include="electroslag\serialize\rapidjson\internal\itoa.h" />
+    <ClInclude Include="electroslag\serialize\rapidjson\internal\meta.h" />
+    <ClInclude Include="electroslag\serialize\rapidjson\internal\pow10.h" />
+    <ClInclude Include="electroslag\serialize\rapidjson\internal\regex.h" />
+    <ClInclude Include="electroslag\serialize\rapidjson\internal\stack.h" />
+    <ClInclude Include="electroslag\serialize\rapidjson\internal\strfunc.h" />
+    <ClInclude Include="electroslag\serialize\rapidjson\internal\strtod.h" />
+    <ClInclude Include="electroslag\serialize\rapidjson\internal\swap.h" />
+    <ClInclude Include="electroslag\serialize\rapidjson\istreamwrapper.h" />
+    <ClInclude Include="electroslag\serialize\rapidjson\memorybuffer.h" />
+    <ClInclude Include="electroslag\serialize\rapidjson\memorystream.h" />
+    <ClInclude Include="electroslag\serialize\rapidjson\msinttypes\inttypes.h" />
+    <ClInclude Include="electroslag\serialize\rapidjson\msinttypes\stdint.h" />
+    <ClInclude Include="electroslag\serialize\rapidjson\ostreamwrapper.h" />
+    <ClInclude Include="electroslag\serialize\rapidjson\pointer.h" />
+    <ClInclude Include="electroslag\serialize\rapidjson\prettywriter.h" />
+    <ClInclude Include="electroslag\serialize\rapidjson\rapidjson.h" />
+    <ClInclude Include="electroslag\serialize\rapidjson\reader.h" />
+    <ClInclude Include="electroslag\serialize\rapidjson\schema.h" />
+    <ClInclude Include="electroslag\serialize\rapidjson\stream.h" />
+    <ClInclude Include="electroslag\serialize\rapidjson\stringbuffer.h" />
+    <ClInclude Include="electroslag\serialize\rapidjson\writer.h" />
+    <ClInclude Include="electroslag\serialize\serializable_buffer.hpp" />
+    <ClInclude Include="electroslag\serialize\serializable_map.hpp" />
+    <ClInclude Include="electroslag\serialize\serializable_name_table.hpp" />
+    <ClInclude Include="electroslag\serialize\serializable_object_interface.hpp" />
+    <ClInclude Include="electroslag\serialize\serializable_object.hpp" />
+    <ClInclude Include="electroslag\serialize\serializable_type_registration.hpp" />
+    <ClInclude Include="electroslag\serialize\database.hpp" />
+    <ClInclude Include="electroslag\serialize\json_archive.hpp" />
+    <ClInclude Include="electroslag\dynamic_library.hpp" />
+    <ClInclude Include="electroslag\file_stream.hpp" />
+    <ClInclude Include="electroslag\graphics\buffer_interface.hpp" />
+    <ClInclude Include="electroslag\graphics\buffer_opengl.hpp" />
+    <ClInclude Include="electroslag\graphics\command_queue.hpp" />
+    <ClInclude Include="electroslag\graphics\context_interface.hpp" />
+    <ClInclude Include="electroslag\graphics\frame_buffer_opengl.hpp" />
+    <ClInclude Include="electroslag\graphics\frame_buffer_interface.hpp" />
+    <ClInclude Include="electroslag\graphics\graphics_debugger_interface.hpp" />
+    <ClInclude Include="electroslag\graphics\graphics_interface.hpp" />
+    <ClInclude Include="electroslag\graphics\context_opengl.hpp" />
+    <ClInclude Include="electroslag\graphics\command_queue_interface.hpp" />
+    <ClInclude Include="electroslag\graphics\image_descriptor.hpp" />
+    <ClInclude Include="electroslag\graphics\primitive_stream_descriptor.hpp" />
+    <ClInclude Include="electroslag\graphics\primitive_stream_interface.hpp" />
+    <ClInclude Include="electroslag\graphics\primitive_stream_opengl.hpp" />
+    <ClInclude Include="electroslag\graphics\render_thread.hpp" />
+    <ClInclude Include="electroslag\graphics\double_buffer_queue.hpp" />
+    <ClInclude Include="electroslag\graphics\graphics_types.hpp" />
+    <ClInclude Include="electroslag\graphics\graphics_opengl.hpp" />
+    <ClInclude Include="electroslag\graphics\render_policy.hpp" />
+    <ClInclude Include="electroslag\graphics\shader_program_descriptor.hpp" />
+    <ClInclude Include="electroslag\graphics\shader_field.hpp" />
+    <ClInclude Include="electroslag\graphics\shader_program_interface.hpp" />
+    <ClInclude Include="electroslag\graphics\shader_program_opengl.hpp" />
+    <ClInclude Include="electroslag\graphics\texture_descriptor.hpp" />
+    <ClInclude Include="electroslag\graphics\texture_interface.hpp" />
+    <ClInclude Include="electroslag\graphics\texture_opengl.hpp" />
+    <ClInclude Include="electroslag\graphics\uniform_buffer_descriptor.hpp" />
+    <ClInclude Include="electroslag\graphics\vertex_attribute.hpp" />
+    <ClInclude Include="electroslag\logger.hpp" />
+    <ClInclude Include="electroslag\reference.hpp" />
+    <ClInclude Include="electroslag\referenced_object.hpp" />
+    <ClInclude Include="electroslag\referenced_buffer.hpp" />
+    <ClInclude Include="electroslag\stream_interface.hpp" />
+    <ClInclude Include="electroslag\systems.hpp" />
+    <ClInclude Include="electroslag\texture\gli_importer.hpp" />
+    <ClInclude Include="electroslag\texture\gli\clear.hpp" />
+    <ClInclude Include="electroslag\texture\gli\comparison.hpp" />
+    <ClInclude Include="electroslag\texture\gli\convert.hpp" />
+    <ClInclude Include="electroslag\texture\gli\copy.hpp" />
+    <ClInclude Include="electroslag\texture\gli\core\clear.hpp" />
+    <ClInclude Include="electroslag\texture\gli\core\convert_func.hpp" />
+    <ClInclude Include="electroslag\texture\gli\core\coord.hpp" />
+    <ClInclude Include="electroslag\texture\gli\core\file.hpp" />
+    <ClInclude Include="electroslag\texture\gli\core\filter.hpp" />
+    <ClInclude Include="electroslag\texture\gli\core\filter_compute.hpp" />
+    <ClInclude Include="electroslag\texture\gli\core\flip.hpp" />
+    <ClInclude Include="electroslag\texture\gli\core\mipmaps_compute.hpp" />
+    <ClInclude Include="electroslag\texture\gli\core\storage.hpp" />
+    <ClInclude Include="electroslag\texture\gli\core\storage_linear.hpp" />
+    <ClInclude Include="electroslag\texture\gli\core\workaround.hpp" />
+    <ClInclude Include="electroslag\texture\gli\duplicate.hpp" />
+    <ClInclude Include="electroslag\texture\gli\dx.hpp" />
+    <ClInclude Include="electroslag\texture\gli\format.hpp" />
+    <ClInclude Include="electroslag\texture\gli\generate_mipmaps.hpp" />
+    <ClInclude Include="electroslag\texture\gli\gl.hpp" />
+    <ClInclude Include="electroslag\texture\gli\gli.hpp" />
+    <ClInclude Include="electroslag\texture\gli\image.hpp" />
+    <ClInclude Include="electroslag\texture\gli\levels.hpp" />
+    <ClInclude Include="electroslag\texture\gli\load.hpp" />
+    <ClInclude Include="electroslag\texture\gli\load_dds.hpp" />
+    <ClInclude Include="electroslag\texture\gli\load_kmg.hpp" />
+    <ClInclude Include="electroslag\texture\gli\load_ktx.hpp" />
+    <ClInclude Include="electroslag\texture\gli\make_texture.hpp" />
+    <ClInclude Include="electroslag\texture\gli\reduce.hpp" />
+    <ClInclude Include="electroslag\texture\gli\sampler.hpp" />
+    <ClInclude Include="electroslag\texture\gli\sampler1d.hpp" />
+    <ClInclude Include="electroslag\texture\gli\sampler1d_array.hpp" />
+    <ClInclude Include="electroslag\texture\gli\sampler2d.hpp" />
+    <ClInclude Include="electroslag\texture\gli\sampler2d_array.hpp" />
+    <ClInclude Include="electroslag\texture\gli\sampler3d.hpp" />
+    <ClInclude Include="electroslag\texture\gli\sampler_cube.hpp" />
+    <ClInclude Include="electroslag\texture\gli\sampler_cube_array.hpp" />
+    <ClInclude Include="electroslag\texture\gli\save.hpp" />
+    <ClInclude Include="electroslag\texture\gli\save_dds.hpp" />
+    <ClInclude Include="electroslag\texture\gli\save_kmg.hpp" />
+    <ClInclude Include="electroslag\texture\gli\save_ktx.hpp" />
+    <ClInclude Include="electroslag\texture\gli\target.hpp" />
+    <ClInclude Include="electroslag\texture\gli\texture.hpp" />
+    <ClInclude Include="electroslag\texture\gli\texture1d.hpp" />
+    <ClInclude Include="electroslag\texture\gli\texture1d_array.hpp" />
+    <ClInclude Include="electroslag\texture\gli\texture2d.hpp" />
+    <ClInclude Include="electroslag\texture\gli\texture2d_array.hpp" />
+    <ClInclude Include="electroslag\texture\gli\texture3d.hpp" />
+    <ClInclude Include="electroslag\texture\gli\texture_cube.hpp" />
+    <ClInclude Include="electroslag\texture\gli\texture_cube_array.hpp" />
+    <ClInclude Include="electroslag\texture\gli\transform.hpp" />
+    <ClInclude Include="electroslag\texture\gli\type.hpp" />
+    <ClInclude Include="electroslag\texture\gli\view.hpp" />
+    <ClInclude Include="electroslag\threading\future_interface.hpp" />
+    <ClInclude Include="electroslag\threading\thread_pool.hpp" />
+    <ClInclude Include="electroslag\threading\worker_thread.hpp" />
+    <ClInclude Include="electroslag\threading\work_item_interface.hpp" />
+    <ClInclude Include="electroslag\ui\ui_interface.hpp" />
+    <ClInclude Include="electroslag\ui\ui_internal_interface.hpp" />
+    <ClInclude Include="electroslag\ui\ui_win32.hpp" />
+    <ClInclude Include="electroslag\ui\input_interface.hpp" />
+    <ClInclude Include="electroslag\ui\timer_interface.hpp" />
+    <ClInclude Include="electroslag\ui\input_win32.hpp" />
+    <ClInclude Include="electroslag\ui\timer_win32.hpp" />
+    <ClInclude Include="electroslag\ui\window_win32.hpp" />
+    <ClInclude Include="electroslag\ui\window_interface.hpp" />
+    <ClInclude Include="electroslag\delegate.hpp" />
+    <ClInclude Include="electroslag\event.hpp" />
+    <ClInclude Include="electroslag\exception.hpp" />
+    <ClInclude Include="electroslag\named_object.hpp" />
+    <ClInclude Include="electroslag\precomp.hpp" />
+    <ClInclude Include="electroslag\resource_id.hpp" />
+    <ClInclude Include="electroslag\threading\condition_variable.hpp" />
+    <ClInclude Include="electroslag\threading\mutex.hpp" />
+    <ClInclude Include="electroslag\threading\this_thread.hpp" />
+    <ClInclude Include="electroslag\threading\thread.hpp" />
+    <ClInclude Include="electroslag\threading\thread_local_map.hpp" />
+    <ClInclude Include="electroslag\threading\thread_local_ptr.hpp" />
+    <ClInclude Include="electroslag\utility.hpp" />
+    <ClInclude Include="electroslag\version.hpp" />
+    <ClInclude Include="electroslag\windows_sdk.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="electroslag\animation\property_manager.cpp" />
+    <ClCompile Include="electroslag\application\application.cpp" />
+    <ClCompile Include="electroslag\application\loading_screen.cpp" />
+    <ClCompile Include="electroslag\file_stream.cpp" />
+    <ClCompile Include="electroslag\graphics\buffer_descriptor.cpp" />
+    <ClCompile Include="electroslag\graphics\glloadgen\gl_core_4_5.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Ship|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="electroslag\graphics\glloadgen\wgl_core_4_5.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Ship|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="electroslag\graphics\image_descriptor.cpp" />
+    <ClCompile Include="electroslag\graphics\primitive_stream_descriptor.cpp" />
+    <ClCompile Include="electroslag\graphics\serialized_graphics_types.cpp" />
+    <ClCompile Include="electroslag\graphics\shader_field_map.cpp" />
+    <ClCompile Include="electroslag\graphics\shader_program_descriptor.cpp" />
+    <ClCompile Include="electroslag\graphics\shader_stage_descriptor.cpp" />
+    <ClCompile Include="electroslag\graphics\sub_context_opengl.cpp" />
+    <ClCompile Include="electroslag\graphics\sync_opengl.cpp" />
+    <ClCompile Include="electroslag\graphics\sync_thread_opengl.cpp" />
+    <ClCompile Include="electroslag\graphics\uniform_buffer_descriptor.cpp" />
+    <ClCompile Include="electroslag\main.cpp" />
+    <ClCompile Include="electroslag\math\glm\detail\glm.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Ship|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="electroslag\mesh\gltf2_importer.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Ship|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="electroslag\named_object.cpp" />
+    <ClCompile Include="electroslag\name_table.cpp" />
+    <ClCompile Include="electroslag\renderer\camera_descriptor.cpp" />
+    <ClCompile Include="electroslag\renderer\camera.cpp" />
+    <ClCompile Include="electroslag\renderer\geometry_pass.cpp" />
+    <ClCompile Include="electroslag\renderer\mesh_data_per_pass.cpp" />
+    <ClCompile Include="electroslag\renderer\pipeline_composite.cpp" />
+    <ClCompile Include="electroslag\renderer\pipeline_manager.cpp" />
+    <ClCompile Include="electroslag\renderer\primitive_stream_manager.cpp" />
+    <ClCompile Include="electroslag\renderer\renderable_descriptor.cpp" />
+    <ClCompile Include="electroslag\renderer\geometry_descriptor.cpp" />
+    <ClCompile Include="electroslag\renderer\pipeline_descriptor.cpp" />
+    <ClCompile Include="electroslag\renderer\scene.cpp" />
+    <ClCompile Include="electroslag\renderer\shader_program_manager.cpp" />
+    <ClCompile Include="electroslag\renderer\static_mesh.cpp" />
+    <ClCompile Include="electroslag\renderer\texture_manager.cpp" />
+    <ClCompile Include="electroslag\renderer\transform_descriptor.cpp" />
+    <ClCompile Include="electroslag\renderer\renderer.cpp" />
+    <ClCompile Include="electroslag\renderer\instance_descriptor.cpp" />
+    <ClCompile Include="electroslag\renderer\uniform_buffer_manager.cpp" />
+    <ClCompile Include="electroslag\resource.cpp" />
+    <ClCompile Include="electroslag\serialize\base64.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Ship|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="electroslag\serialize\binary_archive.cpp" />
+    <ClCompile Include="electroslag\serialize\database.cpp" />
+    <ClCompile Include="electroslag\serialize\json_archive.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Ship|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="electroslag\graphics\buffer_opengl.cpp" />
+    <ClCompile Include="electroslag\graphics\command_queue.cpp" />
+    <ClCompile Include="electroslag\graphics\frame_buffer_opengl.cpp" />
+    <ClCompile Include="electroslag\graphics\context_opengl.cpp" />
+    <ClCompile Include="electroslag\graphics\primitive_stream_opengl.cpp" />
+    <ClCompile Include="electroslag\graphics\render_thread.cpp" />
+    <ClCompile Include="electroslag\graphics\double_buffer_queue.cpp" />
+    <ClCompile Include="electroslag\graphics\graphics_opengl.cpp" />
+    <ClCompile Include="electroslag\graphics\render_policy.cpp" />
+    <ClCompile Include="electroslag\graphics\shader_program_opengl.cpp" />
+    <ClCompile Include="electroslag\graphics\texture_descriptor.cpp" />
+    <ClCompile Include="electroslag\graphics\texture_opengl.cpp" />
+    <ClCompile Include="electroslag\logger.cpp" />
+    <ClCompile Include="electroslag\serialize\load_record.cpp" />
+    <ClCompile Include="electroslag\serialize\serializable_map.cpp" />
+    <ClCompile Include="electroslag\serialize\serializable_name_table.cpp" />
+    <ClCompile Include="electroslag\serialize\serializable_object_interface.cpp" />
+    <ClCompile Include="electroslag\serialize\serializable_type_registration.cpp" />
+    <ClCompile Include="electroslag\systems.cpp" />
+    <ClCompile Include="electroslag\texture\gli_importer.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Ship|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="electroslag\threading\mutex.cpp" />
+    <ClCompile Include="electroslag\threading\this_thread.cpp" />
+    <ClCompile Include="electroslag\threading\thread_pool.cpp" />
+    <ClCompile Include="electroslag\threading\worker_thread.cpp" />
+    <ClCompile Include="electroslag\threading\work_item_interface.cpp" />
+    <ClCompile Include="electroslag\ui\ui_win32.cpp" />
+    <ClCompile Include="electroslag\ui\input_win32.cpp" />
+    <ClCompile Include="electroslag\ui\timer_win32.cpp" />
+    <ClCompile Include="electroslag\ui\window_win32.cpp" />
+    <ClCompile Include="electroslag\precomp.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Ship|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="electroslag\threading\condition_variable.cpp" />
+    <ClCompile Include="electroslag\threading\thread.cpp" />
+    <ClCompile Include="electroslag\threading\thread_local_map.cpp" />
+    <ClCompile Include="electroslag\utility.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="electroslag\resource.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="electroslag\resources\icon\electroslag.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="electroslag\graphics\glloadgen\electroslag.txt">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Ship|x64'">true</ExcludedFromBuild>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="electroslag\graphics\glloadgen\VERSION">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Ship|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </None>
+    <None Include="electroslag\math\glm\detail\func_common.inl" />
+    <None Include="electroslag\math\glm\detail\func_common_simd.inl" />
+    <None Include="electroslag\math\glm\detail\func_exponential.inl" />
+    <None Include="electroslag\math\glm\detail\func_exponential_simd.inl" />
+    <None Include="electroslag\math\glm\detail\func_geometric.inl" />
+    <None Include="electroslag\math\glm\detail\func_geometric_simd.inl" />
+    <None Include="electroslag\math\glm\detail\func_integer.inl" />
+    <None Include="electroslag\math\glm\detail\func_integer_simd.inl" />
+    <None Include="electroslag\math\glm\detail\func_matrix.inl" />
+    <None Include="electroslag\math\glm\detail\func_matrix_simd.inl" />
+    <None Include="electroslag\math\glm\detail\func_packing.inl" />
+    <None Include="electroslag\math\glm\detail\func_packing_simd.inl" />
+    <None Include="electroslag\math\glm\detail\func_trigonometric.inl" />
+    <None Include="electroslag\math\glm\detail\func_trigonometric_simd.inl" />
+    <None Include="electroslag\math\glm\detail\func_vector_relational.inl" />
+    <None Include="electroslag\math\glm\detail\func_vector_relational_simd.inl" />
+    <None Include="electroslag\math\glm\detail\type_gentype.inl" />
+    <None Include="electroslag\math\glm\detail\type_half.inl" />
+    <None Include="electroslag\math\glm\detail\type_mat.inl" />
+    <None Include="electroslag\math\glm\detail\type_mat2x2.inl" />
+    <None Include="electroslag\math\glm\detail\type_mat2x3.inl" />
+    <None Include="electroslag\math\glm\detail\type_mat2x4.inl" />
+    <None Include="electroslag\math\glm\detail\type_mat3x2.inl" />
+    <None Include="electroslag\math\glm\detail\type_mat3x3.inl" />
+    <None Include="electroslag\math\glm\detail\type_mat3x4.inl" />
+    <None Include="electroslag\math\glm\detail\type_mat4x2.inl" />
+    <None Include="electroslag\math\glm\detail\type_mat4x3.inl" />
+    <None Include="electroslag\math\glm\detail\type_mat4x4.inl" />
+    <None Include="electroslag\math\glm\detail\type_mat4x4_simd.inl" />
+    <None Include="electroslag\math\glm\detail\type_vec.inl" />
+    <None Include="electroslag\math\glm\detail\type_vec1.inl" />
+    <None Include="electroslag\math\glm\detail\type_vec2.inl" />
+    <None Include="electroslag\math\glm\detail\type_vec3.inl" />
+    <None Include="electroslag\math\glm\detail\type_vec4.inl" />
+    <None Include="electroslag\math\glm\detail\type_vec4_simd.inl" />
+    <None Include="electroslag\math\glm\gtc\bitfield.inl" />
+    <None Include="electroslag\math\glm\gtc\color_encoding.inl" />
+    <None Include="electroslag\math\glm\gtc\color_space.inl" />
+    <None Include="electroslag\math\glm\gtc\constants.inl" />
+    <None Include="electroslag\math\glm\gtc\epsilon.inl" />
+    <None Include="electroslag\math\glm\gtc\functions.inl" />
+    <None Include="electroslag\math\glm\gtc\integer.inl" />
+    <None Include="electroslag\math\glm\gtc\matrix_access.inl" />
+    <None Include="electroslag\math\glm\gtc\matrix_inverse.inl" />
+    <None Include="electroslag\math\glm\gtc\matrix_transform.inl" />
+    <None Include="electroslag\math\glm\gtc\noise.inl" />
+    <None Include="electroslag\math\glm\gtc\packing.inl" />
+    <None Include="electroslag\math\glm\gtc\quaternion.inl" />
+    <None Include="electroslag\math\glm\gtc\quaternion_simd.inl" />
+    <None Include="electroslag\math\glm\gtc\random.inl" />
+    <None Include="electroslag\math\glm\gtc\reciprocal.inl" />
+    <None Include="electroslag\math\glm\gtc\round.inl" />
+    <None Include="electroslag\math\glm\gtc\type_precision.inl" />
+    <None Include="electroslag\math\glm\gtc\type_ptr.inl" />
+    <None Include="electroslag\math\glm\gtc\ulp.inl" />
+    <None Include="electroslag\math\glm\gtc\vec1.inl" />
+    <None Include="electroslag\math\glm\gtx\associated_min_max.inl" />
+    <None Include="electroslag\math\glm\gtx\bit.inl" />
+    <None Include="electroslag\math\glm\gtx\closest_point.inl" />
+    <None Include="electroslag\math\glm\gtx\color_space.inl" />
+    <None Include="electroslag\math\glm\gtx\color_space_YCoCg.inl" />
+    <None Include="electroslag\math\glm\gtx\common.inl" />
+    <None Include="electroslag\math\glm\gtx\compatibility.inl" />
+    <None Include="electroslag\math\glm\gtx\component_wise.inl" />
+    <None Include="electroslag\math\glm\gtx\dual_quaternion.inl" />
+    <None Include="electroslag\math\glm\gtx\euler_angles.inl" />
+    <None Include="electroslag\math\glm\gtx\extend.inl" />
+    <None Include="electroslag\math\glm\gtx\extended_min_max.inl" />
+    <None Include="electroslag\math\glm\gtx\fast_exponential.inl" />
+    <None Include="electroslag\math\glm\gtx\fast_square_root.inl" />
+    <None Include="electroslag\math\glm\gtx\fast_trigonometry.inl" />
+    <None Include="electroslag\math\glm\gtx\float_notmalize.inl" />
+    <None Include="electroslag\math\glm\gtx\gradient_paint.inl" />
+    <None Include="electroslag\math\glm\gtx\handed_coordinate_space.inl" />
+    <None Include="electroslag\math\glm\gtx\hash.inl" />
+    <None Include="electroslag\math\glm\gtx\integer.inl" />
+    <None Include="electroslag\math\glm\gtx\intersect.inl" />
+    <None Include="electroslag\math\glm\gtx\io.inl" />
+    <None Include="electroslag\math\glm\gtx\log_base.inl" />
+    <None Include="electroslag\math\glm\gtx\matrix_cross_product.inl" />
+    <None Include="electroslag\math\glm\gtx\matrix_decompose.inl" />
+    <None Include="electroslag\math\glm\gtx\matrix_interpolation.inl" />
+    <None Include="electroslag\math\glm\gtx\matrix_major_storage.inl" />
+    <None Include="electroslag\math\glm\gtx\matrix_operation.inl" />
+    <None Include="electroslag\math\glm\gtx\matrix_query.inl" />
+    <None Include="electroslag\math\glm\gtx\matrix_transform_2d.inl" />
+    <None Include="electroslag\math\glm\gtx\mixed_product.inl" />
+    <None Include="electroslag\math\glm\gtx\norm.inl" />
+    <None Include="electroslag\math\glm\gtx\normal.inl" />
+    <None Include="electroslag\math\glm\gtx\normalize_dot.inl" />
+    <None Include="electroslag\math\glm\gtx\number_precision.inl" />
+    <None Include="electroslag\math\glm\gtx\optimum_pow.inl" />
+    <None Include="electroslag\math\glm\gtx\orthonormalize.inl" />
+    <None Include="electroslag\math\glm\gtx\perpendicular.inl" />
+    <None Include="electroslag\math\glm\gtx\polar_coordinates.inl" />
+    <None Include="electroslag\math\glm\gtx\projection.inl" />
+    <None Include="electroslag\math\glm\gtx\quaternion.inl" />
+    <None Include="electroslag\math\glm\gtx\raw_data.inl" />
+    <None Include="electroslag\math\glm\gtx\rotate_normalized_axis.inl" />
+    <None Include="electroslag\math\glm\gtx\rotate_vector.inl" />
+    <None Include="electroslag\math\glm\gtx\scalar_relational.inl" />
+    <None Include="electroslag\math\glm\gtx\spline.inl" />
+    <None Include="electroslag\math\glm\gtx\std_based_type.inl" />
+    <None Include="electroslag\math\glm\gtx\string_cast.inl" />
+    <None Include="electroslag\math\glm\gtx\transform.inl" />
+    <None Include="electroslag\math\glm\gtx\transform2.inl" />
+    <None Include="electroslag\math\glm\gtx\type_aligned.inl" />
+    <None Include="electroslag\math\glm\gtx\type_trait.inl" />
+    <None Include="electroslag\math\glm\gtx\vector_angle.inl" />
+    <None Include="electroslag\math\glm\gtx\vector_query.inl" />
+    <None Include="electroslag\math\glm\gtx\wrap.inl" />
+    <None Include="electroslag\math\glm\VERSION">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Ship|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </None>
+    <None Include="electroslag\resources\content\build_content.bat" />
+    <None Include="electroslag\resources\content\loading_screen\shader\loading_screen.frag" />
+    <None Include="electroslag\resources\content\loading_screen\shader\loading_screen.vert" />
+    <None Include="electroslag\resources\content\use_content.bat" />
+    <None Include="electroslag\resources\content\loading_screen.json" />
+    <None Include="electroslag\resources\content\content.json" />
+    <None Include="electroslag\serialize\rapidjson\VERSION">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Ship|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </None>
+    <None Include="electroslag\texture\gli\core\clear.inl" />
+    <None Include="electroslag\texture\gli\core\comparison.inl" />
+    <None Include="electroslag\texture\gli\core\convert.inl" />
+    <None Include="electroslag\texture\gli\core\copy.inl" />
+    <None Include="electroslag\texture\gli\core\duplicate.inl" />
+    <None Include="electroslag\texture\gli\core\dx.inl" />
+    <None Include="electroslag\texture\gli\core\file.inl" />
+    <None Include="electroslag\texture\gli\core\filter.inl" />
+    <None Include="electroslag\texture\gli\core\flip.inl" />
+    <None Include="electroslag\texture\gli\core\format.inl" />
+    <None Include="electroslag\texture\gli\core\generate_mipmaps.inl" />
+    <None Include="electroslag\texture\gli\core\gl.inl" />
+    <None Include="electroslag\texture\gli\core\image.inl" />
+    <None Include="electroslag\texture\gli\core\levels.inl" />
+    <None Include="electroslag\texture\gli\core\load.inl" />
+    <None Include="electroslag\texture\gli\core\load_dds.inl" />
+    <None Include="electroslag\texture\gli\core\load_kmg.inl" />
+    <None Include="electroslag\texture\gli\core\load_ktx.inl" />
+    <None Include="electroslag\texture\gli\core\make_texture.inl" />
+    <None Include="electroslag\texture\gli\core\reduce.inl" />
+    <None Include="electroslag\texture\gli\core\sampler.inl" />
+    <None Include="electroslag\texture\gli\core\sampler1d.inl" />
+    <None Include="electroslag\texture\gli\core\sampler1d_array.inl" />
+    <None Include="electroslag\texture\gli\core\sampler2d.inl" />
+    <None Include="electroslag\texture\gli\core\sampler2d_array.inl" />
+    <None Include="electroslag\texture\gli\core\sampler3d.inl" />
+    <None Include="electroslag\texture\gli\core\sampler_cube.inl" />
+    <None Include="electroslag\texture\gli\core\sampler_cube_array.inl" />
+    <None Include="electroslag\texture\gli\core\save.inl" />
+    <None Include="electroslag\texture\gli\core\save_dds.inl" />
+    <None Include="electroslag\texture\gli\core\save_kmg.inl" />
+    <None Include="electroslag\texture\gli\core\save_ktx.inl" />
+    <None Include="electroslag\texture\gli\core\storage.inl" />
+    <None Include="electroslag\texture\gli\core\storage_linear.inl" />
+    <None Include="electroslag\texture\gli\core\texture.inl" />
+    <None Include="electroslag\texture\gli\core\texture1d.inl" />
+    <None Include="electroslag\texture\gli\core\texture1d_array.inl" />
+    <None Include="electroslag\texture\gli\core\texture2d.inl" />
+    <None Include="electroslag\texture\gli\core\texture2d_array.inl" />
+    <None Include="electroslag\texture\gli\core\texture3d.inl" />
+    <None Include="electroslag\texture\gli\core\texture_cube.inl" />
+    <None Include="electroslag\texture\gli\core\texture_cube_array.inl" />
+    <None Include="electroslag\texture\gli\core\transform.inl" />
+    <None Include="electroslag\texture\gli\core\view.inl" />
+    <None Include="electroslag\texture\gli\VERSION">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Ship|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </None>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

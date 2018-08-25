@@ -24,31 +24,35 @@ namespace electroslag {
         scene::scene(instance_descriptor::ref const& scene_desc)
             : m_visible(false)
         {
-            instance_descriptor::const_instance_iterator r(scene_desc->begin_renderables());
-            while (r != scene_desc->end_renderables()) {
-                int component_bits = r->descriptor->get_component_bits();
-                if (static_mesh::supported_component_bits(component_bits)) {
-                    m_meshes.emplace_back(static_mesh::create(
-                        r->descriptor,
-                        r->transform,
-                        r->name_hash
-                        ).cast<mesh_interface>());
-                }
-                else if (camera::supported_component_bits(component_bits)) {
-                    m_cameras.emplace_back(camera::create(
-                        r->descriptor,
-                        r->transform,
-                        r->name_hash
-                        ));
-                }
-                else {
-                    throw load_object_failure("component bits");
-                }
-                ++r;
-            }
+            load_instance(scene_desc, transform_desciptor::ref::null_ref);
 
             m_mesh_transforms.resize(m_meshes.size());
             m_camera_transforms.resize(m_cameras.size());
+        }
+
+        void scene::load_instance(
+            instance_descriptor::ref const& instance_desc,
+            transform_descriptor::ref const& parent_transform_desc
+            )
+        {
+            int component_bits = r->descriptor->get_component_bits();
+            if (static_mesh::supported_component_bits(component_bits)) {
+                m_meshes.emplace_back(static_mesh::create(
+                    r->descriptor,
+                    r->transform,
+                    r->name_hash
+                    ).cast<mesh_interface>());
+            }
+            else if (camera::supported_component_bits(component_bits)) {
+                m_cameras.emplace_back(camera::create(
+                    r->descriptor,
+                    r->transform,
+                    r->name_hash
+                    ));
+            }
+            else {
+                throw load_object_failure("component bits");
+            }
         }
 
         void scene::show()

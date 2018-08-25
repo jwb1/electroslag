@@ -1,0 +1,1934 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="electroslag">
+      <UniqueIdentifier>{296dc00a-81ae-4220-96cf-dfdc0fe7be8a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="electroslag\resources">
+      <UniqueIdentifier>{3dc5c028-e7c0-423a-9c77-24cd646d3736}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="electroslag\resources\icon">
+      <UniqueIdentifier>{4ba5651e-778a-4957-9074-65ba3e62ca95}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="electroslag\threading">
+      <UniqueIdentifier>{fbdf71e8-2255-40c3-a4a1-aa70d312f6e0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="electroslag\ui">
+      <UniqueIdentifier>{116f2974-e8a7-435a-ad81-1728fe5ea4da}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="electroslag\graphics">
+      <UniqueIdentifier>{6fdee107-79e5-45ce-b54a-217ece452cec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="electroslag\graphics\glloadgen">
+      <UniqueIdentifier>{e017eff0-0097-4193-8777-6bb4f8d27a9d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="electroslag\serialize">
+      <UniqueIdentifier>{a42a3770-d0be-4c7b-a175-5f9a06624987}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="electroslag\serialize\rapidjson">
+      <UniqueIdentifier>{a384c7e0-4f6e-447c-87f4-1613b5b8b6a8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="electroslag\serialize\rapidjson\error">
+      <UniqueIdentifier>{2331574b-9079-4e20-a186-8a162705092c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="electroslag\serialize\rapidjson\internal">
+      <UniqueIdentifier>{7ffc64e0-9339-486b-9fb4-608b00c540cf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="electroslag\serialize\rapidjson\msinttypes">
+      <UniqueIdentifier>{9d37929a-46f6-44db-8996-de2c04b1d978}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="electroslag\math">
+      <UniqueIdentifier>{f4237ea2-d186-47be-afbd-033e208467a2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="electroslag\math\glm">
+      <UniqueIdentifier>{40f46952-110d-450a-893f-b767a9ee4629}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="electroslag\math\glm\detail">
+      <UniqueIdentifier>{13c14df9-c99c-4b02-ad42-24d547e74124}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="electroslag\math\glm\gtc">
+      <UniqueIdentifier>{11c85b8b-554a-4157-bcb5-c7cab7e0a960}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="electroslag\math\glm\gtx">
+      <UniqueIdentifier>{473bb589-473c-443c-8ace-a0bb7349edf8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="electroslag\renderer">
+      <UniqueIdentifier>{8e79de31-9528-4197-a48d-d844420d4027}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="electroslag\math\glm\simd">
+      <UniqueIdentifier>{b9a1442a-46e6-4e1b-99d6-32984f63cb8f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="electroslag\animation">
+      <UniqueIdentifier>{d4fcbf33-11be-42b7-be31-3ec7de4f9849}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="electroslag\resources\content">
+      <UniqueIdentifier>{c3b1da33-e62c-4a0f-b3cb-6fef2dcc0ba0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="electroslag\mesh">
+      <UniqueIdentifier>{628e72c6-1999-4288-a5d5-5617536217f4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="electroslag\texture">
+      <UniqueIdentifier>{826fd2e0-e805-4d72-90e9-bc8dae41fa35}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="electroslag\texture\gli">
+      <UniqueIdentifier>{6d4b9e1d-c2f6-4b1e-87b9-f233a43011a9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="electroslag\texture\gli\core">
+      <UniqueIdentifier>{d8f09d4a-bb29-43c3-a91b-508740c3ae55}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="electroslag\application">
+      <UniqueIdentifier>{4274578b-cf23-4489-90d5-a484096a3999}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="electroslag\resources\content\loading_screen">
+      <UniqueIdentifier>{9ab920ac-6c98-4906-9ffc-f4865603a2c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="electroslag\resources\content\loading_screen\shader">
+      <UniqueIdentifier>{d7360787-c2ce-49fc-9d89-f0af6d252069}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="electroslag\resources\content\content">
+      <UniqueIdentifier>{7500cca6-e2b0-457b-bf95-557f58bd551d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="electroslag\precomp.hpp">
+      <Filter>electroslag</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\windows_sdk.hpp">
+      <Filter>electroslag</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\resource_id.hpp">
+      <Filter>electroslag</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\version.hpp">
+      <Filter>electroslag</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\exception.hpp">
+      <Filter>electroslag</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\threading\condition_variable.hpp">
+      <Filter>electroslag\threading</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\threading\mutex.hpp">
+      <Filter>electroslag\threading</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\threading\this_thread.hpp">
+      <Filter>electroslag\threading</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\threading\thread.hpp">
+      <Filter>electroslag\threading</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\threading\thread_local_map.hpp">
+      <Filter>electroslag\threading</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\threading\thread_local_ptr.hpp">
+      <Filter>electroslag\threading</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\named_object.hpp">
+      <Filter>electroslag</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\delegate.hpp">
+      <Filter>electroslag</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\event.hpp">
+      <Filter>electroslag</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\ui\window_interface.hpp">
+      <Filter>electroslag\ui</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\utility.hpp">
+      <Filter>electroslag</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\ui\input_interface.hpp">
+      <Filter>electroslag\ui</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\ui\timer_interface.hpp">
+      <Filter>electroslag\ui</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\graphics\graphics_types.hpp">
+      <Filter>electroslag\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\graphics\double_buffer_queue.hpp">
+      <Filter>electroslag\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\graphics\render_policy.hpp">
+      <Filter>electroslag\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\graphics\render_thread.hpp">
+      <Filter>electroslag\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\graphics\context_interface.hpp">
+      <Filter>electroslag\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\ui\ui_interface.hpp">
+      <Filter>electroslag\ui</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\graphics\graphics_interface.hpp">
+      <Filter>electroslag\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\graphics\command_queue.hpp">
+      <Filter>electroslag\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\graphics\command_queue_interface.hpp">
+      <Filter>electroslag\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\graphics\frame_buffer_interface.hpp">
+      <Filter>electroslag\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\ui\input_win32.hpp">
+      <Filter>electroslag\ui</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\ui\timer_win32.hpp">
+      <Filter>electroslag\ui</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\ui\ui_win32.hpp">
+      <Filter>electroslag\ui</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\ui\window_win32.hpp">
+      <Filter>electroslag\ui</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\graphics\context_opengl.hpp">
+      <Filter>electroslag\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\reference.hpp">
+      <Filter>electroslag</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\graphics\frame_buffer_opengl.hpp">
+      <Filter>electroslag\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\graphics\buffer_interface.hpp">
+      <Filter>electroslag\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\graphics\buffer_opengl.hpp">
+      <Filter>electroslag\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\referenced_buffer.hpp">
+      <Filter>electroslag</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\graphics\shader_field.hpp">
+      <Filter>electroslag\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\graphics\vertex_attribute.hpp">
+      <Filter>electroslag\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\graphics\primitive_stream_interface.hpp">
+      <Filter>electroslag\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\graphics\primitive_stream_opengl.hpp">
+      <Filter>electroslag\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\graphics\graphics_opengl.hpp">
+      <Filter>electroslag\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\graphics\shader_program_interface.hpp">
+      <Filter>electroslag\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\graphics\shader_program_opengl.hpp">
+      <Filter>electroslag\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\graphics\uniform_buffer_descriptor.hpp">
+      <Filter>electroslag\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\graphics\shader_program_descriptor.hpp">
+      <Filter>electroslag\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\graphics\texture_opengl.hpp">
+      <Filter>electroslag\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\graphics\texture_interface.hpp">
+      <Filter>electroslag\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\graphics\texture_descriptor.hpp">
+      <Filter>electroslag\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\graphics\primitive_stream_descriptor.hpp">
+      <Filter>electroslag\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\graphics\image_descriptor.hpp">
+      <Filter>electroslag\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\logger.hpp">
+      <Filter>electroslag</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\file_stream.hpp">
+      <Filter>electroslag</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\stream_interface.hpp">
+      <Filter>electroslag</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\dynamic_library.hpp">
+      <Filter>electroslag</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\serialize\database.hpp">
+      <Filter>electroslag\serialize</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\serialize\archive_interface.hpp">
+      <Filter>electroslag\serialize</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\serialize\binary_archive.hpp">
+      <Filter>electroslag\serialize</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\serialize\json_archive.hpp">
+      <Filter>electroslag\serialize</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\serialize\serializable_object.hpp">
+      <Filter>electroslag\serialize</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\serialize\serializable_type_registration.hpp">
+      <Filter>electroslag\serialize</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\serialize\serializable_object_interface.hpp">
+      <Filter>electroslag\serialize</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\referenced_object.hpp">
+      <Filter>electroslag</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\serialize\serializable_name_table.hpp">
+      <Filter>electroslag\serialize</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\graphics\buffer_descriptor.hpp">
+      <Filter>electroslag\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\serialize\rapidjson\allocators.h">
+      <Filter>electroslag\serialize\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\serialize\rapidjson\document.h">
+      <Filter>electroslag\serialize\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\serialize\rapidjson\encodedstream.h">
+      <Filter>electroslag\serialize\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\serialize\rapidjson\encodings.h">
+      <Filter>electroslag\serialize\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\serialize\rapidjson\filereadstream.h">
+      <Filter>electroslag\serialize\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\serialize\rapidjson\filewritestream.h">
+      <Filter>electroslag\serialize\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\serialize\rapidjson\memorybuffer.h">
+      <Filter>electroslag\serialize\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\serialize\rapidjson\memorystream.h">
+      <Filter>electroslag\serialize\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\serialize\rapidjson\prettywriter.h">
+      <Filter>electroslag\serialize\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\serialize\rapidjson\rapidjson.h">
+      <Filter>electroslag\serialize\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\serialize\rapidjson\reader.h">
+      <Filter>electroslag\serialize\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\serialize\rapidjson\stringbuffer.h">
+      <Filter>electroslag\serialize\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\serialize\rapidjson\writer.h">
+      <Filter>electroslag\serialize\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\serialize\rapidjson\error\en.h">
+      <Filter>electroslag\serialize\rapidjson\error</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\serialize\rapidjson\error\error.h">
+      <Filter>electroslag\serialize\rapidjson\error</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\serialize\rapidjson\internal\biginteger.h">
+      <Filter>electroslag\serialize\rapidjson\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\serialize\rapidjson\internal\diyfp.h">
+      <Filter>electroslag\serialize\rapidjson\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\serialize\rapidjson\internal\dtoa.h">
+      <Filter>electroslag\serialize\rapidjson\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\serialize\rapidjson\internal\ieee754.h">
+      <Filter>electroslag\serialize\rapidjson\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\serialize\rapidjson\internal\itoa.h">
+      <Filter>electroslag\serialize\rapidjson\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\serialize\rapidjson\internal\meta.h">
+      <Filter>electroslag\serialize\rapidjson\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\serialize\rapidjson\internal\pow10.h">
+      <Filter>electroslag\serialize\rapidjson\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\serialize\rapidjson\internal\stack.h">
+      <Filter>electroslag\serialize\rapidjson\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\serialize\rapidjson\internal\strfunc.h">
+      <Filter>electroslag\serialize\rapidjson\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\serialize\rapidjson\internal\strtod.h">
+      <Filter>electroslag\serialize\rapidjson\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\serialize\rapidjson\msinttypes\inttypes.h">
+      <Filter>electroslag\serialize\rapidjson\msinttypes</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\serialize\rapidjson\msinttypes\stdint.h">
+      <Filter>electroslag\serialize\rapidjson\msinttypes</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\threading\thread_pool.hpp">
+      <Filter>electroslag\threading</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\name_table.hpp">
+      <Filter>electroslag</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\serialize\base64.hpp">
+      <Filter>electroslag\serialize</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\graphics\shader_stage_descriptor.hpp">
+      <Filter>electroslag\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\common.hpp">
+      <Filter>electroslag\math\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\exponential.hpp">
+      <Filter>electroslag\math\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\ext.hpp">
+      <Filter>electroslag\math\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\fwd.hpp">
+      <Filter>electroslag\math\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\geometric.hpp">
+      <Filter>electroslag\math\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\glm.hpp">
+      <Filter>electroslag\math\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\integer.hpp">
+      <Filter>electroslag\math\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\mat2x2.hpp">
+      <Filter>electroslag\math\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\mat2x3.hpp">
+      <Filter>electroslag\math\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\mat2x4.hpp">
+      <Filter>electroslag\math\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\mat3x2.hpp">
+      <Filter>electroslag\math\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\mat3x3.hpp">
+      <Filter>electroslag\math\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\mat3x4.hpp">
+      <Filter>electroslag\math\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\mat4x2.hpp">
+      <Filter>electroslag\math\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\mat4x3.hpp">
+      <Filter>electroslag\math\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\mat4x4.hpp">
+      <Filter>electroslag\math\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\matrix.hpp">
+      <Filter>electroslag\math\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\packing.hpp">
+      <Filter>electroslag\math\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\trigonometric.hpp">
+      <Filter>electroslag\math\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\vec2.hpp">
+      <Filter>electroslag\math\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\vec3.hpp">
+      <Filter>electroslag\math\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\vec4.hpp">
+      <Filter>electroslag\math\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\vector_relational.hpp">
+      <Filter>electroslag\math\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\detail\_features.hpp">
+      <Filter>electroslag\math\glm\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\detail\_fixes.hpp">
+      <Filter>electroslag\math\glm\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\detail\_noise.hpp">
+      <Filter>electroslag\math\glm\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\detail\_swizzle.hpp">
+      <Filter>electroslag\math\glm\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\detail\_swizzle_func.hpp">
+      <Filter>electroslag\math\glm\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\detail\_vectorize.hpp">
+      <Filter>electroslag\math\glm\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\detail\setup.hpp">
+      <Filter>electroslag\math\glm\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\detail\type_float.hpp">
+      <Filter>electroslag\math\glm\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\detail\type_gentype.hpp">
+      <Filter>electroslag\math\glm\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\detail\type_half.hpp">
+      <Filter>electroslag\math\glm\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\detail\type_int.hpp">
+      <Filter>electroslag\math\glm\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\detail\type_mat.hpp">
+      <Filter>electroslag\math\glm\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\detail\type_mat2x2.hpp">
+      <Filter>electroslag\math\glm\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\detail\type_mat2x3.hpp">
+      <Filter>electroslag\math\glm\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\detail\type_mat2x4.hpp">
+      <Filter>electroslag\math\glm\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\detail\type_mat3x2.hpp">
+      <Filter>electroslag\math\glm\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\detail\type_mat3x3.hpp">
+      <Filter>electroslag\math\glm\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\detail\type_mat3x4.hpp">
+      <Filter>electroslag\math\glm\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\detail\type_mat4x2.hpp">
+      <Filter>electroslag\math\glm\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\detail\type_mat4x3.hpp">
+      <Filter>electroslag\math\glm\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\detail\type_mat4x4.hpp">
+      <Filter>electroslag\math\glm\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\detail\type_vec.hpp">
+      <Filter>electroslag\math\glm\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\detail\type_vec1.hpp">
+      <Filter>electroslag\math\glm\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\detail\type_vec2.hpp">
+      <Filter>electroslag\math\glm\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\detail\type_vec3.hpp">
+      <Filter>electroslag\math\glm\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\detail\type_vec4.hpp">
+      <Filter>electroslag\math\glm\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\gtc\bitfield.hpp">
+      <Filter>electroslag\math\glm\gtc</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\gtc\color_space.hpp">
+      <Filter>electroslag\math\glm\gtc</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\gtc\constants.hpp">
+      <Filter>electroslag\math\glm\gtc</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\gtc\epsilon.hpp">
+      <Filter>electroslag\math\glm\gtc</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\gtc\integer.hpp">
+      <Filter>electroslag\math\glm\gtc</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\gtc\matrix_access.hpp">
+      <Filter>electroslag\math\glm\gtc</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\gtc\matrix_integer.hpp">
+      <Filter>electroslag\math\glm\gtc</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\gtc\matrix_inverse.hpp">
+      <Filter>electroslag\math\glm\gtc</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\gtc\matrix_transform.hpp">
+      <Filter>electroslag\math\glm\gtc</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\gtc\noise.hpp">
+      <Filter>electroslag\math\glm\gtc</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\gtc\packing.hpp">
+      <Filter>electroslag\math\glm\gtc</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\gtc\quaternion.hpp">
+      <Filter>electroslag\math\glm\gtc</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\gtc\random.hpp">
+      <Filter>electroslag\math\glm\gtc</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\gtc\reciprocal.hpp">
+      <Filter>electroslag\math\glm\gtc</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\gtc\round.hpp">
+      <Filter>electroslag\math\glm\gtc</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\gtc\type_precision.hpp">
+      <Filter>electroslag\math\glm\gtc</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\gtc\type_ptr.hpp">
+      <Filter>electroslag\math\glm\gtc</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\gtc\ulp.hpp">
+      <Filter>electroslag\math\glm\gtc</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\gtc\vec1.hpp">
+      <Filter>electroslag\math\glm\gtc</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\gtx\associated_min_max.hpp">
+      <Filter>electroslag\math\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\gtx\bit.hpp">
+      <Filter>electroslag\math\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\gtx\closest_point.hpp">
+      <Filter>electroslag\math\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\gtx\color_space.hpp">
+      <Filter>electroslag\math\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\gtx\color_space_YCoCg.hpp">
+      <Filter>electroslag\math\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\gtx\common.hpp">
+      <Filter>electroslag\math\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\gtx\compatibility.hpp">
+      <Filter>electroslag\math\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\gtx\component_wise.hpp">
+      <Filter>electroslag\math\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\gtx\dual_quaternion.hpp">
+      <Filter>electroslag\math\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\gtx\euler_angles.hpp">
+      <Filter>electroslag\math\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\gtx\extend.hpp">
+      <Filter>electroslag\math\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\gtx\fast_exponential.hpp">
+      <Filter>electroslag\math\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\gtx\fast_square_root.hpp">
+      <Filter>electroslag\math\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\gtx\fast_trigonometry.hpp">
+      <Filter>electroslag\math\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\gtx\gradient_paint.hpp">
+      <Filter>electroslag\math\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\gtx\handed_coordinate_space.hpp">
+      <Filter>electroslag\math\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\gtx\hash.hpp">
+      <Filter>electroslag\math\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\gtx\integer.hpp">
+      <Filter>electroslag\math\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\gtx\intersect.hpp">
+      <Filter>electroslag\math\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\gtx\io.hpp">
+      <Filter>electroslag\math\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\gtx\log_base.hpp">
+      <Filter>electroslag\math\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\gtx\matrix_cross_product.hpp">
+      <Filter>electroslag\math\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\gtx\matrix_decompose.hpp">
+      <Filter>electroslag\math\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\gtx\matrix_interpolation.hpp">
+      <Filter>electroslag\math\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\gtx\matrix_major_storage.hpp">
+      <Filter>electroslag\math\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\gtx\matrix_operation.hpp">
+      <Filter>electroslag\math\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\gtx\matrix_query.hpp">
+      <Filter>electroslag\math\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\gtx\matrix_transform_2d.hpp">
+      <Filter>electroslag\math\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\gtx\mixed_product.hpp">
+      <Filter>electroslag\math\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\gtx\norm.hpp">
+      <Filter>electroslag\math\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\gtx\normal.hpp">
+      <Filter>electroslag\math\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\gtx\normalize_dot.hpp">
+      <Filter>electroslag\math\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\gtx\number_precision.hpp">
+      <Filter>electroslag\math\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\gtx\optimum_pow.hpp">
+      <Filter>electroslag\math\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\gtx\orthonormalize.hpp">
+      <Filter>electroslag\math\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\gtx\perpendicular.hpp">
+      <Filter>electroslag\math\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\gtx\polar_coordinates.hpp">
+      <Filter>electroslag\math\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\gtx\projection.hpp">
+      <Filter>electroslag\math\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\gtx\quaternion.hpp">
+      <Filter>electroslag\math\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\gtx\range.hpp">
+      <Filter>electroslag\math\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\gtx\raw_data.hpp">
+      <Filter>electroslag\math\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\gtx\rotate_normalized_axis.hpp">
+      <Filter>electroslag\math\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\gtx\rotate_vector.hpp">
+      <Filter>electroslag\math\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\gtx\scalar_multiplication.hpp">
+      <Filter>electroslag\math\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\gtx\scalar_relational.hpp">
+      <Filter>electroslag\math\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\gtx\spline.hpp">
+      <Filter>electroslag\math\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\gtx\std_based_type.hpp">
+      <Filter>electroslag\math\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\gtx\string_cast.hpp">
+      <Filter>electroslag\math\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\gtx\transform.hpp">
+      <Filter>electroslag\math\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\gtx\transform2.hpp">
+      <Filter>electroslag\math\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\gtx\type_aligned.hpp">
+      <Filter>electroslag\math\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\gtx\vector_angle.hpp">
+      <Filter>electroslag\math\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\gtx\vector_query.hpp">
+      <Filter>electroslag\math\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\gtx\wrap.hpp">
+      <Filter>electroslag\math\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\threading\work_item_interface.hpp">
+      <Filter>electroslag\threading</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\graphics\glloadgen\gl_core_4_5.hpp">
+      <Filter>electroslag\graphics\glloadgen</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\graphics\glloadgen\wgl_core_4_5.hpp">
+      <Filter>electroslag\graphics\glloadgen</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\renderer\renderer.hpp">
+      <Filter>electroslag\renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\renderer\scene.hpp">
+      <Filter>electroslag\renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\renderer\renderable_descriptor.hpp">
+      <Filter>electroslag\renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\renderer\renderer_types.hpp">
+      <Filter>electroslag\renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\renderer\geometry_descriptor.hpp">
+      <Filter>electroslag\renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\renderer\transform_descriptor.hpp">
+      <Filter>electroslag\renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\aabb.hpp">
+      <Filter>electroslag\math</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\renderer\pass_interface.hpp">
+      <Filter>electroslag\renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\renderer\camera_descriptor.hpp">
+      <Filter>electroslag\renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\gtc\type_aligned.hpp">
+      <Filter>electroslag\math\glm\gtc</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\gtx\extended_min_max.hpp">
+      <Filter>electroslag\math\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\gtx\type_trait.hpp">
+      <Filter>electroslag\math\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\simd\common.h">
+      <Filter>electroslag\math\glm\simd</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\simd\exponential.h">
+      <Filter>electroslag\math\glm\simd</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\simd\geometric.h">
+      <Filter>electroslag\math\glm\simd</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\simd\integer.h">
+      <Filter>electroslag\math\glm\simd</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\simd\matrix.h">
+      <Filter>electroslag\math\glm\simd</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\simd\packing.h">
+      <Filter>electroslag\math\glm\simd</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\simd\platform.h">
+      <Filter>electroslag\math\glm\simd</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\simd\trigonometric.h">
+      <Filter>electroslag\math\glm\simd</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\simd\vector_relational.h">
+      <Filter>electroslag\math\glm\simd</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\systems.hpp">
+      <Filter>electroslag</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\serialize\rapidjson\internal\regex.h">
+      <Filter>electroslag\serialize\rapidjson\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\serialize\rapidjson\internal\swap.h">
+      <Filter>electroslag\serialize\rapidjson\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\serialize\rapidjson\fwd.h">
+      <Filter>electroslag\serialize\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\serialize\rapidjson\istreamwrapper.h">
+      <Filter>electroslag\serialize\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\serialize\rapidjson\ostreamwrapper.h">
+      <Filter>electroslag\serialize\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\serialize\rapidjson\pointer.h">
+      <Filter>electroslag\serialize\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\serialize\rapidjson\schema.h">
+      <Filter>electroslag\serialize\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\serialize\rapidjson\stream.h">
+      <Filter>electroslag\serialize\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\plane.hpp">
+      <Filter>electroslag\math</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\graphics\sync_interface.hpp">
+      <Filter>electroslag\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\graphics\sync_opengl.hpp">
+      <Filter>electroslag\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\graphics\sync_thread_opengl.hpp">
+      <Filter>electroslag\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\graphics\sub_context_opengl.hpp">
+      <Filter>electroslag\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\renderer\uniform_buffer_manager.hpp">
+      <Filter>electroslag\renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\renderer\primitive_stream_manager.hpp">
+      <Filter>electroslag\renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\renderer\texture_manager.hpp">
+      <Filter>electroslag\renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\renderer\pipeline_descriptor.hpp">
+      <Filter>electroslag\renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\graphics\serialized_graphics_types.hpp">
+      <Filter>electroslag\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\renderer\pipeline_manager.hpp">
+      <Filter>electroslag\renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\renderer\pipeline_interface.hpp">
+      <Filter>electroslag\renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\renderer\pipeline_composite.hpp">
+      <Filter>electroslag\renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\renderer\shader_program_manager.hpp">
+      <Filter>electroslag\renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\serialize\serializable_map.hpp">
+      <Filter>electroslag\serialize</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\graphics\context_capability_interface.hpp">
+      <Filter>electroslag\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\renderer\mesh_data_per_pass.hpp">
+      <Filter>electroslag\renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\renderer\renderer_interface.hpp">
+      <Filter>electroslag\renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\renderer\field_source_interface.hpp">
+      <Filter>electroslag\renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\animation\property.hpp">
+      <Filter>electroslag\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\animation\property_manager.hpp">
+      <Filter>electroslag\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\animation\property_manager_interface.hpp">
+      <Filter>electroslag\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\animation\animated_object.hpp">
+      <Filter>electroslag\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\animation\property_controller_interface.hpp">
+      <Filter>electroslag\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\animation\velocity_controller.hpp">
+      <Filter>electroslag\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\animation\property_controller_typed_interface.hpp">
+      <Filter>electroslag\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm_overload.hpp">
+      <Filter>electroslag\math</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\animation\constant_value_controller.hpp">
+      <Filter>electroslag\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\resource.hpp">
+      <Filter>electroslag</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\buffer_stream.hpp">
+      <Filter>electroslag</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\graphics\shader_field_map.hpp">
+      <Filter>electroslag\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\ui\ui_internal_interface.hpp">
+      <Filter>electroslag\ui</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\renderer\camera.hpp">
+      <Filter>electroslag\renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\renderer\geometry_pass.hpp">
+      <Filter>electroslag\renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\renderer\mesh_interface.hpp">
+      <Filter>electroslag\renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\renderer\static_mesh.hpp">
+      <Filter>electroslag\renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\texture\gli\clear.hpp">
+      <Filter>electroslag\texture\gli</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\texture\gli\comparison.hpp">
+      <Filter>electroslag\texture\gli</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\texture\gli\convert.hpp">
+      <Filter>electroslag\texture\gli</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\texture\gli\copy.hpp">
+      <Filter>electroslag\texture\gli</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\texture\gli\duplicate.hpp">
+      <Filter>electroslag\texture\gli</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\texture\gli\dx.hpp">
+      <Filter>electroslag\texture\gli</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\texture\gli\format.hpp">
+      <Filter>electroslag\texture\gli</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\texture\gli\generate_mipmaps.hpp">
+      <Filter>electroslag\texture\gli</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\texture\gli\gl.hpp">
+      <Filter>electroslag\texture\gli</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\texture\gli\gli.hpp">
+      <Filter>electroslag\texture\gli</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\texture\gli\image.hpp">
+      <Filter>electroslag\texture\gli</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\texture\gli\levels.hpp">
+      <Filter>electroslag\texture\gli</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\texture\gli\load.hpp">
+      <Filter>electroslag\texture\gli</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\texture\gli\load_dds.hpp">
+      <Filter>electroslag\texture\gli</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\texture\gli\load_kmg.hpp">
+      <Filter>electroslag\texture\gli</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\texture\gli\load_ktx.hpp">
+      <Filter>electroslag\texture\gli</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\texture\gli\make_texture.hpp">
+      <Filter>electroslag\texture\gli</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\texture\gli\reduce.hpp">
+      <Filter>electroslag\texture\gli</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\texture\gli\sampler.hpp">
+      <Filter>electroslag\texture\gli</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\texture\gli\sampler_cube.hpp">
+      <Filter>electroslag\texture\gli</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\texture\gli\sampler_cube_array.hpp">
+      <Filter>electroslag\texture\gli</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\texture\gli\sampler1d.hpp">
+      <Filter>electroslag\texture\gli</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\texture\gli\sampler1d_array.hpp">
+      <Filter>electroslag\texture\gli</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\texture\gli\sampler2d.hpp">
+      <Filter>electroslag\texture\gli</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\texture\gli\sampler2d_array.hpp">
+      <Filter>electroslag\texture\gli</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\texture\gli\sampler3d.hpp">
+      <Filter>electroslag\texture\gli</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\texture\gli\save.hpp">
+      <Filter>electroslag\texture\gli</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\texture\gli\save_dds.hpp">
+      <Filter>electroslag\texture\gli</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\texture\gli\save_kmg.hpp">
+      <Filter>electroslag\texture\gli</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\texture\gli\save_ktx.hpp">
+      <Filter>electroslag\texture\gli</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\texture\gli\target.hpp">
+      <Filter>electroslag\texture\gli</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\texture\gli\texture.hpp">
+      <Filter>electroslag\texture\gli</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\texture\gli\texture_cube.hpp">
+      <Filter>electroslag\texture\gli</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\texture\gli\texture_cube_array.hpp">
+      <Filter>electroslag\texture\gli</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\texture\gli\texture1d.hpp">
+      <Filter>electroslag\texture\gli</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\texture\gli\texture1d_array.hpp">
+      <Filter>electroslag\texture\gli</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\texture\gli\texture2d.hpp">
+      <Filter>electroslag\texture\gli</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\texture\gli\texture2d_array.hpp">
+      <Filter>electroslag\texture\gli</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\texture\gli\texture3d.hpp">
+      <Filter>electroslag\texture\gli</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\texture\gli\transform.hpp">
+      <Filter>electroslag\texture\gli</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\texture\gli\type.hpp">
+      <Filter>electroslag\texture\gli</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\texture\gli\view.hpp">
+      <Filter>electroslag\texture\gli</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\texture\gli\core\clear.hpp">
+      <Filter>electroslag\texture\gli\core</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\texture\gli\core\convert_func.hpp">
+      <Filter>electroslag\texture\gli\core</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\texture\gli\core\coord.hpp">
+      <Filter>electroslag\texture\gli\core</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\texture\gli\core\file.hpp">
+      <Filter>electroslag\texture\gli\core</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\texture\gli\core\filter.hpp">
+      <Filter>electroslag\texture\gli\core</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\texture\gli\core\filter_compute.hpp">
+      <Filter>electroslag\texture\gli\core</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\texture\gli\core\flip.hpp">
+      <Filter>electroslag\texture\gli\core</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\texture\gli\core\mipmaps_compute.hpp">
+      <Filter>electroslag\texture\gli\core</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\texture\gli\core\storage.hpp">
+      <Filter>electroslag\texture\gli\core</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\texture\gli\core\storage_linear.hpp">
+      <Filter>electroslag\texture\gli\core</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\texture\gli\core\workaround.hpp">
+      <Filter>electroslag\texture\gli\core</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\detail\func_common.hpp">
+      <Filter>electroslag\math\glm\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\detail\func_exponential.hpp">
+      <Filter>electroslag\math\glm\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\detail\func_geometric.hpp">
+      <Filter>electroslag\math\glm\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\detail\func_integer.hpp">
+      <Filter>electroslag\math\glm\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\detail\func_matrix.hpp">
+      <Filter>electroslag\math\glm\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\detail\func_packing.hpp">
+      <Filter>electroslag\math\glm\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\detail\func_trigonometric.hpp">
+      <Filter>electroslag\math\glm\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\detail\func_vector_relational.hpp">
+      <Filter>electroslag\math\glm\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\detail\precision.hpp">
+      <Filter>electroslag\math\glm\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\math\glm\gtc\functions.hpp">
+      <Filter>electroslag\math\glm\gtc</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\threading\future_interface.hpp">
+      <Filter>electroslag\threading</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\serialize\importer_interface.hpp">
+      <Filter>electroslag\serialize</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\graphics\graphics_debugger_interface.hpp">
+      <Filter>electroslag\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\texture\gli_importer.hpp">
+      <Filter>electroslag\texture</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\mesh\gltf2_importer.hpp">
+      <Filter>electroslag\mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\serialize\load_record.hpp">
+      <Filter>electroslag\serialize</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\serialize\serializable_buffer.hpp">
+      <Filter>electroslag\serialize</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\threading\worker_thread.hpp">
+      <Filter>electroslag\threading</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\application\application.hpp">
+      <Filter>electroslag\application</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\application\loading_screen.hpp">
+      <Filter>electroslag\application</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\dynamic_array.hpp">
+      <Filter>electroslag</Filter>
+    </ClInclude>
+    <ClInclude Include="electroslag\renderer\instance_descriptor.hpp">
+      <Filter>electroslag\renderer</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="electroslag\precomp.cpp">
+      <Filter>electroslag</Filter>
+    </ClCompile>
+    <ClCompile Include="electroslag\threading\condition_variable.cpp">
+      <Filter>electroslag\threading</Filter>
+    </ClCompile>
+    <ClCompile Include="electroslag\threading\thread.cpp">
+      <Filter>electroslag\threading</Filter>
+    </ClCompile>
+    <ClCompile Include="electroslag\threading\thread_local_map.cpp">
+      <Filter>electroslag\threading</Filter>
+    </ClCompile>
+    <ClCompile Include="electroslag\graphics\double_buffer_queue.cpp">
+      <Filter>electroslag\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="electroslag\graphics\render_policy.cpp">
+      <Filter>electroslag\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="electroslag\graphics\render_thread.cpp">
+      <Filter>electroslag\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="electroslag\graphics\command_queue.cpp">
+      <Filter>electroslag\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="electroslag\ui\input_win32.cpp">
+      <Filter>electroslag\ui</Filter>
+    </ClCompile>
+    <ClCompile Include="electroslag\ui\timer_win32.cpp">
+      <Filter>electroslag\ui</Filter>
+    </ClCompile>
+    <ClCompile Include="electroslag\ui\ui_win32.cpp">
+      <Filter>electroslag\ui</Filter>
+    </ClCompile>
+    <ClCompile Include="electroslag\ui\window_win32.cpp">
+      <Filter>electroslag\ui</Filter>
+    </ClCompile>
+    <ClCompile Include="electroslag\graphics\context_opengl.cpp">
+      <Filter>electroslag\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="electroslag\graphics\frame_buffer_opengl.cpp">
+      <Filter>electroslag\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="electroslag\graphics\buffer_opengl.cpp">
+      <Filter>electroslag\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="electroslag\graphics\primitive_stream_opengl.cpp">
+      <Filter>electroslag\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="electroslag\graphics\graphics_opengl.cpp">
+      <Filter>electroslag\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="electroslag\graphics\shader_program_opengl.cpp">
+      <Filter>electroslag\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="electroslag\graphics\texture_opengl.cpp">
+      <Filter>electroslag\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="electroslag\graphics\texture_descriptor.cpp">
+      <Filter>electroslag\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="electroslag\logger.cpp">
+      <Filter>electroslag</Filter>
+    </ClCompile>
+    <ClCompile Include="electroslag\utility.cpp">
+      <Filter>electroslag</Filter>
+    </ClCompile>
+    <ClCompile Include="electroslag\serialize\database.cpp">
+      <Filter>electroslag\serialize</Filter>
+    </ClCompile>
+    <ClCompile Include="electroslag\serialize\binary_archive.cpp">
+      <Filter>electroslag\serialize</Filter>
+    </ClCompile>
+    <ClCompile Include="electroslag\serialize\json_archive.cpp">
+      <Filter>electroslag\serialize</Filter>
+    </ClCompile>
+    <ClCompile Include="electroslag\threading\this_thread.cpp">
+      <Filter>electroslag\threading</Filter>
+    </ClCompile>
+    <ClCompile Include="electroslag\threading\mutex.cpp">
+      <Filter>electroslag\threading</Filter>
+    </ClCompile>
+    <ClCompile Include="electroslag\graphics\shader_program_descriptor.cpp">
+      <Filter>electroslag\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="electroslag\graphics\primitive_stream_descriptor.cpp">
+      <Filter>electroslag\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="electroslag\graphics\uniform_buffer_descriptor.cpp">
+      <Filter>electroslag\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="electroslag\serialize\serializable_name_table.cpp">
+      <Filter>electroslag\serialize</Filter>
+    </ClCompile>
+    <ClCompile Include="electroslag\threading\thread_pool.cpp">
+      <Filter>electroslag\threading</Filter>
+    </ClCompile>
+    <ClCompile Include="electroslag\name_table.cpp">
+      <Filter>electroslag</Filter>
+    </ClCompile>
+    <ClCompile Include="electroslag\named_object.cpp">
+      <Filter>electroslag</Filter>
+    </ClCompile>
+    <ClCompile Include="electroslag\serialize\base64.cpp">
+      <Filter>electroslag\serialize</Filter>
+    </ClCompile>
+    <ClCompile Include="electroslag\graphics\shader_stage_descriptor.cpp">
+      <Filter>electroslag\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="electroslag\graphics\buffer_descriptor.cpp">
+      <Filter>electroslag\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="electroslag\graphics\image_descriptor.cpp">
+      <Filter>electroslag\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="electroslag\math\glm\detail\glm.cpp">
+      <Filter>electroslag\math\glm\detail</Filter>
+    </ClCompile>
+    <ClCompile Include="electroslag\threading\work_item_interface.cpp">
+      <Filter>electroslag\threading</Filter>
+    </ClCompile>
+    <ClCompile Include="electroslag\graphics\glloadgen\gl_core_4_5.cpp">
+      <Filter>electroslag\graphics\glloadgen</Filter>
+    </ClCompile>
+    <ClCompile Include="electroslag\graphics\glloadgen\wgl_core_4_5.cpp">
+      <Filter>electroslag\graphics\glloadgen</Filter>
+    </ClCompile>
+    <ClCompile Include="electroslag\renderer\renderer.cpp">
+      <Filter>electroslag\renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="electroslag\renderer\renderable_descriptor.cpp">
+      <Filter>electroslag\renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="electroslag\renderer\geometry_descriptor.cpp">
+      <Filter>electroslag\renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="electroslag\renderer\transform_descriptor.cpp">
+      <Filter>electroslag\renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="electroslag\renderer\scene.cpp">
+      <Filter>electroslag\renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="electroslag\renderer\camera_descriptor.cpp">
+      <Filter>electroslag\renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="electroslag\systems.cpp">
+      <Filter>electroslag</Filter>
+    </ClCompile>
+    <ClCompile Include="electroslag\graphics\sync_opengl.cpp">
+      <Filter>electroslag\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="electroslag\graphics\sync_thread_opengl.cpp">
+      <Filter>electroslag\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="electroslag\graphics\sub_context_opengl.cpp">
+      <Filter>electroslag\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="electroslag\renderer\uniform_buffer_manager.cpp">
+      <Filter>electroslag\renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="electroslag\renderer\primitive_stream_manager.cpp">
+      <Filter>electroslag\renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="electroslag\renderer\texture_manager.cpp">
+      <Filter>electroslag\renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="electroslag\renderer\pipeline_descriptor.cpp">
+      <Filter>electroslag\renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="electroslag\graphics\serialized_graphics_types.cpp">
+      <Filter>electroslag\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="electroslag\renderer\pipeline_manager.cpp">
+      <Filter>electroslag\renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="electroslag\renderer\pipeline_composite.cpp">
+      <Filter>electroslag\renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="electroslag\renderer\shader_program_manager.cpp">
+      <Filter>electroslag\renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="electroslag\serialize\serializable_map.cpp">
+      <Filter>electroslag\serialize</Filter>
+    </ClCompile>
+    <ClCompile Include="electroslag\renderer\mesh_data_per_pass.cpp">
+      <Filter>electroslag\renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="electroslag\animation\property_manager.cpp">
+      <Filter>electroslag\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="electroslag\resource.cpp">
+      <Filter>electroslag</Filter>
+    </ClCompile>
+    <ClCompile Include="electroslag\serialize\serializable_object_interface.cpp">
+      <Filter>electroslag\serialize</Filter>
+    </ClCompile>
+    <ClCompile Include="electroslag\graphics\shader_field_map.cpp">
+      <Filter>electroslag\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="electroslag\renderer\camera.cpp">
+      <Filter>electroslag\renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="electroslag\renderer\geometry_pass.cpp">
+      <Filter>electroslag\renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="electroslag\renderer\static_mesh.cpp">
+      <Filter>electroslag\renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="electroslag\texture\gli_importer.cpp">
+      <Filter>electroslag\texture</Filter>
+    </ClCompile>
+    <ClCompile Include="electroslag\mesh\gltf2_importer.cpp">
+      <Filter>electroslag\mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="electroslag\file_stream.cpp">
+      <Filter>electroslag</Filter>
+    </ClCompile>
+    <ClCompile Include="electroslag\serialize\load_record.cpp">
+      <Filter>electroslag\serialize</Filter>
+    </ClCompile>
+    <ClCompile Include="electroslag\serialize\serializable_type_registration.cpp">
+      <Filter>electroslag\serialize</Filter>
+    </ClCompile>
+    <ClCompile Include="electroslag\main.cpp">
+      <Filter>electroslag</Filter>
+    </ClCompile>
+    <ClCompile Include="electroslag\threading\worker_thread.cpp">
+      <Filter>electroslag\threading</Filter>
+    </ClCompile>
+    <ClCompile Include="electroslag\application\application.cpp">
+      <Filter>electroslag\application</Filter>
+    </ClCompile>
+    <ClCompile Include="electroslag\application\loading_screen.cpp">
+      <Filter>electroslag\application</Filter>
+    </ClCompile>
+    <ClCompile Include="electroslag\renderer\instance_descriptor.cpp">
+      <Filter>electroslag\renderer</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="electroslag\resource.rc">
+      <Filter>electroslag</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="electroslag\resources\icon\electroslag.ico">
+      <Filter>electroslag\resources\icon</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="electroslag\graphics\glloadgen\electroslag.txt">
+      <Filter>electroslag\graphics\glloadgen</Filter>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="electroslag\serialize\rapidjson\VERSION">
+      <Filter>electroslag\serialize\rapidjson</Filter>
+    </None>
+    <None Include="electroslag\math\glm\VERSION">
+      <Filter>electroslag\math\glm</Filter>
+    </None>
+    <None Include="electroslag\math\glm\detail\func_common.inl">
+      <Filter>electroslag\math\glm\detail</Filter>
+    </None>
+    <None Include="electroslag\math\glm\detail\func_exponential.inl">
+      <Filter>electroslag\math\glm\detail</Filter>
+    </None>
+    <None Include="electroslag\math\glm\detail\func_geometric.inl">
+      <Filter>electroslag\math\glm\detail</Filter>
+    </None>
+    <None Include="electroslag\math\glm\detail\func_integer.inl">
+      <Filter>electroslag\math\glm\detail</Filter>
+    </None>
+    <None Include="electroslag\math\glm\detail\func_matrix.inl">
+      <Filter>electroslag\math\glm\detail</Filter>
+    </None>
+    <None Include="electroslag\math\glm\detail\func_packing.inl">
+      <Filter>electroslag\math\glm\detail</Filter>
+    </None>
+    <None Include="electroslag\math\glm\detail\func_trigonometric.inl">
+      <Filter>electroslag\math\glm\detail</Filter>
+    </None>
+    <None Include="electroslag\math\glm\detail\func_vector_relational.inl">
+      <Filter>electroslag\math\glm\detail</Filter>
+    </None>
+    <None Include="electroslag\math\glm\detail\type_gentype.inl">
+      <Filter>electroslag\math\glm\detail</Filter>
+    </None>
+    <None Include="electroslag\math\glm\detail\type_half.inl">
+      <Filter>electroslag\math\glm\detail</Filter>
+    </None>
+    <None Include="electroslag\math\glm\detail\type_mat.inl">
+      <Filter>electroslag\math\glm\detail</Filter>
+    </None>
+    <None Include="electroslag\math\glm\detail\type_mat2x2.inl">
+      <Filter>electroslag\math\glm\detail</Filter>
+    </None>
+    <None Include="electroslag\math\glm\detail\type_mat2x3.inl">
+      <Filter>electroslag\math\glm\detail</Filter>
+    </None>
+    <None Include="electroslag\math\glm\detail\type_mat2x4.inl">
+      <Filter>electroslag\math\glm\detail</Filter>
+    </None>
+    <None Include="electroslag\math\glm\detail\type_mat3x2.inl">
+      <Filter>electroslag\math\glm\detail</Filter>
+    </None>
+    <None Include="electroslag\math\glm\detail\type_mat3x3.inl">
+      <Filter>electroslag\math\glm\detail</Filter>
+    </None>
+    <None Include="electroslag\math\glm\detail\type_mat3x4.inl">
+      <Filter>electroslag\math\glm\detail</Filter>
+    </None>
+    <None Include="electroslag\math\glm\detail\type_mat4x2.inl">
+      <Filter>electroslag\math\glm\detail</Filter>
+    </None>
+    <None Include="electroslag\math\glm\detail\type_mat4x3.inl">
+      <Filter>electroslag\math\glm\detail</Filter>
+    </None>
+    <None Include="electroslag\math\glm\detail\type_mat4x4.inl">
+      <Filter>electroslag\math\glm\detail</Filter>
+    </None>
+    <None Include="electroslag\math\glm\detail\type_vec.inl">
+      <Filter>electroslag\math\glm\detail</Filter>
+    </None>
+    <None Include="electroslag\math\glm\detail\type_vec1.inl">
+      <Filter>electroslag\math\glm\detail</Filter>
+    </None>
+    <None Include="electroslag\math\glm\detail\type_vec2.inl">
+      <Filter>electroslag\math\glm\detail</Filter>
+    </None>
+    <None Include="electroslag\math\glm\detail\type_vec3.inl">
+      <Filter>electroslag\math\glm\detail</Filter>
+    </None>
+    <None Include="electroslag\math\glm\detail\type_vec4.inl">
+      <Filter>electroslag\math\glm\detail</Filter>
+    </None>
+    <None Include="electroslag\math\glm\gtc\bitfield.inl">
+      <Filter>electroslag\math\glm\gtc</Filter>
+    </None>
+    <None Include="electroslag\math\glm\gtc\color_space.inl">
+      <Filter>electroslag\math\glm\gtc</Filter>
+    </None>
+    <None Include="electroslag\math\glm\gtc\constants.inl">
+      <Filter>electroslag\math\glm\gtc</Filter>
+    </None>
+    <None Include="electroslag\math\glm\gtc\epsilon.inl">
+      <Filter>electroslag\math\glm\gtc</Filter>
+    </None>
+    <None Include="electroslag\math\glm\gtc\integer.inl">
+      <Filter>electroslag\math\glm\gtc</Filter>
+    </None>
+    <None Include="electroslag\math\glm\gtc\matrix_access.inl">
+      <Filter>electroslag\math\glm\gtc</Filter>
+    </None>
+    <None Include="electroslag\math\glm\gtc\matrix_inverse.inl">
+      <Filter>electroslag\math\glm\gtc</Filter>
+    </None>
+    <None Include="electroslag\math\glm\gtc\matrix_transform.inl">
+      <Filter>electroslag\math\glm\gtc</Filter>
+    </None>
+    <None Include="electroslag\math\glm\gtc\noise.inl">
+      <Filter>electroslag\math\glm\gtc</Filter>
+    </None>
+    <None Include="electroslag\math\glm\gtc\packing.inl">
+      <Filter>electroslag\math\glm\gtc</Filter>
+    </None>
+    <None Include="electroslag\math\glm\gtc\quaternion.inl">
+      <Filter>electroslag\math\glm\gtc</Filter>
+    </None>
+    <None Include="electroslag\math\glm\gtc\random.inl">
+      <Filter>electroslag\math\glm\gtc</Filter>
+    </None>
+    <None Include="electroslag\math\glm\gtc\reciprocal.inl">
+      <Filter>electroslag\math\glm\gtc</Filter>
+    </None>
+    <None Include="electroslag\math\glm\gtc\round.inl">
+      <Filter>electroslag\math\glm\gtc</Filter>
+    </None>
+    <None Include="electroslag\math\glm\gtc\type_precision.inl">
+      <Filter>electroslag\math\glm\gtc</Filter>
+    </None>
+    <None Include="electroslag\math\glm\gtc\type_ptr.inl">
+      <Filter>electroslag\math\glm\gtc</Filter>
+    </None>
+    <None Include="electroslag\math\glm\gtc\ulp.inl">
+      <Filter>electroslag\math\glm\gtc</Filter>
+    </None>
+    <None Include="electroslag\math\glm\gtc\vec1.inl">
+      <Filter>electroslag\math\glm\gtc</Filter>
+    </None>
+    <None Include="electroslag\math\glm\gtx\associated_min_max.inl">
+      <Filter>electroslag\math\glm\gtx</Filter>
+    </None>
+    <None Include="electroslag\math\glm\gtx\bit.inl">
+      <Filter>electroslag\math\glm\gtx</Filter>
+    </None>
+    <None Include="electroslag\math\glm\gtx\closest_point.inl">
+      <Filter>electroslag\math\glm\gtx</Filter>
+    </None>
+    <None Include="electroslag\math\glm\gtx\color_space.inl">
+      <Filter>electroslag\math\glm\gtx</Filter>
+    </None>
+    <None Include="electroslag\math\glm\gtx\color_space_YCoCg.inl">
+      <Filter>electroslag\math\glm\gtx</Filter>
+    </None>
+    <None Include="electroslag\math\glm\gtx\common.inl">
+      <Filter>electroslag\math\glm\gtx</Filter>
+    </None>
+    <None Include="electroslag\math\glm\gtx\compatibility.inl">
+      <Filter>electroslag\math\glm\gtx</Filter>
+    </None>
+    <None Include="electroslag\math\glm\gtx\component_wise.inl">
+      <Filter>electroslag\math\glm\gtx</Filter>
+    </None>
+    <None Include="electroslag\math\glm\gtx\dual_quaternion.inl">
+      <Filter>electroslag\math\glm\gtx</Filter>
+    </None>
+    <None Include="electroslag\math\glm\gtx\euler_angles.inl">
+      <Filter>electroslag\math\glm\gtx</Filter>
+    </None>
+    <None Include="electroslag\math\glm\gtx\extend.inl">
+      <Filter>electroslag\math\glm\gtx</Filter>
+    </None>
+    <None Include="electroslag\math\glm\gtx\fast_exponential.inl">
+      <Filter>electroslag\math\glm\gtx</Filter>
+    </None>
+    <None Include="electroslag\math\glm\gtx\fast_square_root.inl">
+      <Filter>electroslag\math\glm\gtx</Filter>
+    </None>
+    <None Include="electroslag\math\glm\gtx\fast_trigonometry.inl">
+      <Filter>electroslag\math\glm\gtx</Filter>
+    </None>
+    <None Include="electroslag\math\glm\gtx\gradient_paint.inl">
+      <Filter>electroslag\math\glm\gtx</Filter>
+    </None>
+    <None Include="electroslag\math\glm\gtx\handed_coordinate_space.inl">
+      <Filter>electroslag\math\glm\gtx</Filter>
+    </None>
+    <None Include="electroslag\math\glm\gtx\hash.inl">
+      <Filter>electroslag\math\glm\gtx</Filter>
+    </None>
+    <None Include="electroslag\math\glm\gtx\integer.inl">
+      <Filter>electroslag\math\glm\gtx</Filter>
+    </None>
+    <None Include="electroslag\math\glm\gtx\intersect.inl">
+      <Filter>electroslag\math\glm\gtx</Filter>
+    </None>
+    <None Include="electroslag\math\glm\gtx\io.inl">
+      <Filter>electroslag\math\glm\gtx</Filter>
+    </None>
+    <None Include="electroslag\math\glm\gtx\log_base.inl">
+      <Filter>electroslag\math\glm\gtx</Filter>
+    </None>
+    <None Include="electroslag\math\glm\gtx\matrix_cross_product.inl">
+      <Filter>electroslag\math\glm\gtx</Filter>
+    </None>
+    <None Include="electroslag\math\glm\gtx\matrix_decompose.inl">
+      <Filter>electroslag\math\glm\gtx</Filter>
+    </None>
+    <None Include="electroslag\math\glm\gtx\matrix_interpolation.inl">
+      <Filter>electroslag\math\glm\gtx</Filter>
+    </None>
+    <None Include="electroslag\math\glm\gtx\matrix_major_storage.inl">
+      <Filter>electroslag\math\glm\gtx</Filter>
+    </None>
+    <None Include="electroslag\math\glm\gtx\matrix_operation.inl">
+      <Filter>electroslag\math\glm\gtx</Filter>
+    </None>
+    <None Include="electroslag\math\glm\gtx\matrix_query.inl">
+      <Filter>electroslag\math\glm\gtx</Filter>
+    </None>
+    <None Include="electroslag\math\glm\gtx\matrix_transform_2d.inl">
+      <Filter>electroslag\math\glm\gtx</Filter>
+    </None>
+    <None Include="electroslag\math\glm\gtx\mixed_product.inl">
+      <Filter>electroslag\math\glm\gtx</Filter>
+    </None>
+    <None Include="electroslag\math\glm\gtx\norm.inl">
+      <Filter>electroslag\math\glm\gtx</Filter>
+    </None>
+    <None Include="electroslag\math\glm\gtx\normal.inl">
+      <Filter>electroslag\math\glm\gtx</Filter>
+    </None>
+    <None Include="electroslag\math\glm\gtx\normalize_dot.inl">
+      <Filter>electroslag\math\glm\gtx</Filter>
+    </None>
+    <None Include="electroslag\math\glm\gtx\number_precision.inl">
+      <Filter>electroslag\math\glm\gtx</Filter>
+    </None>
+    <None Include="electroslag\math\glm\gtx\optimum_pow.inl">
+      <Filter>electroslag\math\glm\gtx</Filter>
+    </None>
+    <None Include="electroslag\math\glm\gtx\orthonormalize.inl">
+      <Filter>electroslag\math\glm\gtx</Filter>
+    </None>
+    <None Include="electroslag\math\glm\gtx\perpendicular.inl">
+      <Filter>electroslag\math\glm\gtx</Filter>
+    </None>
+    <None Include="electroslag\math\glm\gtx\polar_coordinates.inl">
+      <Filter>electroslag\math\glm\gtx</Filter>
+    </None>
+    <None Include="electroslag\math\glm\gtx\projection.inl">
+      <Filter>electroslag\math\glm\gtx</Filter>
+    </None>
+    <None Include="electroslag\math\glm\gtx\quaternion.inl">
+      <Filter>electroslag\math\glm\gtx</Filter>
+    </None>
+    <None Include="electroslag\math\glm\gtx\raw_data.inl">
+      <Filter>electroslag\math\glm\gtx</Filter>
+    </None>
+    <None Include="electroslag\math\glm\gtx\rotate_normalized_axis.inl">
+      <Filter>electroslag\math\glm\gtx</Filter>
+    </None>
+    <None Include="electroslag\math\glm\gtx\rotate_vector.inl">
+      <Filter>electroslag\math\glm\gtx</Filter>
+    </None>
+    <None Include="electroslag\math\glm\gtx\scalar_relational.inl">
+      <Filter>electroslag\math\glm\gtx</Filter>
+    </None>
+    <None Include="electroslag\math\glm\gtx\spline.inl">
+      <Filter>electroslag\math\glm\gtx</Filter>
+    </None>
+    <None Include="electroslag\math\glm\gtx\std_based_type.inl">
+      <Filter>electroslag\math\glm\gtx</Filter>
+    </None>
+    <None Include="electroslag\math\glm\gtx\string_cast.inl">
+      <Filter>electroslag\math\glm\gtx</Filter>
+    </None>
+    <None Include="electroslag\math\glm\gtx\transform.inl">
+      <Filter>electroslag\math\glm\gtx</Filter>
+    </None>
+    <None Include="electroslag\math\glm\gtx\transform2.inl">
+      <Filter>electroslag\math\glm\gtx</Filter>
+    </None>
+    <None Include="electroslag\math\glm\gtx\type_aligned.inl">
+      <Filter>electroslag\math\glm\gtx</Filter>
+    </None>
+    <None Include="electroslag\math\glm\gtx\vector_angle.inl">
+      <Filter>electroslag\math\glm\gtx</Filter>
+    </None>
+    <None Include="electroslag\math\glm\gtx\vector_query.inl">
+      <Filter>electroslag\math\glm\gtx</Filter>
+    </None>
+    <None Include="electroslag\math\glm\gtx\wrap.inl">
+      <Filter>electroslag\math\glm\gtx</Filter>
+    </None>
+    <None Include="electroslag\graphics\glloadgen\VERSION">
+      <Filter>electroslag\graphics\glloadgen</Filter>
+    </None>
+    <None Include="electroslag\math\glm\detail\func_common_simd.inl">
+      <Filter>electroslag\math\glm\detail</Filter>
+    </None>
+    <None Include="electroslag\math\glm\detail\func_exponential_simd.inl">
+      <Filter>electroslag\math\glm\detail</Filter>
+    </None>
+    <None Include="electroslag\math\glm\detail\func_geometric_simd.inl">
+      <Filter>electroslag\math\glm\detail</Filter>
+    </None>
+    <None Include="electroslag\math\glm\detail\func_integer_simd.inl">
+      <Filter>electroslag\math\glm\detail</Filter>
+    </None>
+    <None Include="electroslag\math\glm\detail\func_matrix_simd.inl">
+      <Filter>electroslag\math\glm\detail</Filter>
+    </None>
+    <None Include="electroslag\math\glm\detail\func_packing_simd.inl">
+      <Filter>electroslag\math\glm\detail</Filter>
+    </None>
+    <None Include="electroslag\math\glm\detail\func_trigonometric_simd.inl">
+      <Filter>electroslag\math\glm\detail</Filter>
+    </None>
+    <None Include="electroslag\math\glm\detail\func_vector_relational_simd.inl">
+      <Filter>electroslag\math\glm\detail</Filter>
+    </None>
+    <None Include="electroslag\math\glm\detail\type_mat4x4_simd.inl">
+      <Filter>electroslag\math\glm\detail</Filter>
+    </None>
+    <None Include="electroslag\math\glm\detail\type_vec4_simd.inl">
+      <Filter>electroslag\math\glm\detail</Filter>
+    </None>
+    <None Include="electroslag\math\glm\gtx\extended_min_max.inl">
+      <Filter>electroslag\math\glm\gtx</Filter>
+    </None>
+    <None Include="electroslag\math\glm\gtx\float_notmalize.inl">
+      <Filter>electroslag\math\glm\gtx</Filter>
+    </None>
+    <None Include="electroslag\math\glm\gtx\type_trait.inl">
+      <Filter>electroslag\math\glm\gtx</Filter>
+    </None>
+    <None Include="electroslag\math\glm\gtc\quaternion_simd.inl">
+      <Filter>electroslag\math\glm\gtc</Filter>
+    </None>
+    <None Include="electroslag\texture\gli\VERSION">
+      <Filter>electroslag\texture\gli</Filter>
+    </None>
+    <None Include="electroslag\texture\gli\core\clear.inl">
+      <Filter>electroslag\texture\gli\core</Filter>
+    </None>
+    <None Include="electroslag\texture\gli\core\comparison.inl">
+      <Filter>electroslag\texture\gli\core</Filter>
+    </None>
+    <None Include="electroslag\texture\gli\core\convert.inl">
+      <Filter>electroslag\texture\gli\core</Filter>
+    </None>
+    <None Include="electroslag\texture\gli\core\copy.inl">
+      <Filter>electroslag\texture\gli\core</Filter>
+    </None>
+    <None Include="electroslag\texture\gli\core\duplicate.inl">
+      <Filter>electroslag\texture\gli\core</Filter>
+    </None>
+    <None Include="electroslag\texture\gli\core\dx.inl">
+      <Filter>electroslag\texture\gli\core</Filter>
+    </None>
+    <None Include="electroslag\texture\gli\core\file.inl">
+      <Filter>electroslag\texture\gli\core</Filter>
+    </None>
+    <None Include="electroslag\texture\gli\core\filter.inl">
+      <Filter>electroslag\texture\gli\core</Filter>
+    </None>
+    <None Include="electroslag\texture\gli\core\flip.inl">
+      <Filter>electroslag\texture\gli\core</Filter>
+    </None>
+    <None Include="electroslag\texture\gli\core\format.inl">
+      <Filter>electroslag\texture\gli\core</Filter>
+    </None>
+    <None Include="electroslag\texture\gli\core\generate_mipmaps.inl">
+      <Filter>electroslag\texture\gli\core</Filter>
+    </None>
+    <None Include="electroslag\texture\gli\core\gl.inl">
+      <Filter>electroslag\texture\gli\core</Filter>
+    </None>
+    <None Include="electroslag\texture\gli\core\image.inl">
+      <Filter>electroslag\texture\gli\core</Filter>
+    </None>
+    <None Include="electroslag\texture\gli\core\levels.inl">
+      <Filter>electroslag\texture\gli\core</Filter>
+    </None>
+    <None Include="electroslag\texture\gli\core\load.inl">
+      <Filter>electroslag\texture\gli\core</Filter>
+    </None>
+    <None Include="electroslag\texture\gli\core\load_dds.inl">
+      <Filter>electroslag\texture\gli\core</Filter>
+    </None>
+    <None Include="electroslag\texture\gli\core\load_kmg.inl">
+      <Filter>electroslag\texture\gli\core</Filter>
+    </None>
+    <None Include="electroslag\texture\gli\core\load_ktx.inl">
+      <Filter>electroslag\texture\gli\core</Filter>
+    </None>
+    <None Include="electroslag\texture\gli\core\make_texture.inl">
+      <Filter>electroslag\texture\gli\core</Filter>
+    </None>
+    <None Include="electroslag\texture\gli\core\reduce.inl">
+      <Filter>electroslag\texture\gli\core</Filter>
+    </None>
+    <None Include="electroslag\texture\gli\core\sampler.inl">
+      <Filter>electroslag\texture\gli\core</Filter>
+    </None>
+    <None Include="electroslag\texture\gli\core\sampler_cube.inl">
+      <Filter>electroslag\texture\gli\core</Filter>
+    </None>
+    <None Include="electroslag\texture\gli\core\sampler_cube_array.inl">
+      <Filter>electroslag\texture\gli\core</Filter>
+    </None>
+    <None Include="electroslag\texture\gli\core\sampler1d.inl">
+      <Filter>electroslag\texture\gli\core</Filter>
+    </None>
+    <None Include="electroslag\texture\gli\core\sampler1d_array.inl">
+      <Filter>electroslag\texture\gli\core</Filter>
+    </None>
+    <None Include="electroslag\texture\gli\core\sampler2d.inl">
+      <Filter>electroslag\texture\gli\core</Filter>
+    </None>
+    <None Include="electroslag\texture\gli\core\sampler2d_array.inl">
+      <Filter>electroslag\texture\gli\core</Filter>
+    </None>
+    <None Include="electroslag\texture\gli\core\sampler3d.inl">
+      <Filter>electroslag\texture\gli\core</Filter>
+    </None>
+    <None Include="electroslag\texture\gli\core\save.inl">
+      <Filter>electroslag\texture\gli\core</Filter>
+    </None>
+    <None Include="electroslag\texture\gli\core\save_dds.inl">
+      <Filter>electroslag\texture\gli\core</Filter>
+    </None>
+    <None Include="electroslag\texture\gli\core\save_kmg.inl">
+      <Filter>electroslag\texture\gli\core</Filter>
+    </None>
+    <None Include="electroslag\texture\gli\core\save_ktx.inl">
+      <Filter>electroslag\texture\gli\core</Filter>
+    </None>
+    <None Include="electroslag\texture\gli\core\storage.inl">
+      <Filter>electroslag\texture\gli\core</Filter>
+    </None>
+    <None Include="electroslag\texture\gli\core\storage_linear.inl">
+      <Filter>electroslag\texture\gli\core</Filter>
+    </None>
+    <None Include="electroslag\texture\gli\core\texture.inl">
+      <Filter>electroslag\texture\gli\core</Filter>
+    </None>
+    <None Include="electroslag\texture\gli\core\texture_cube.inl">
+      <Filter>electroslag\texture\gli\core</Filter>
+    </None>
+    <None Include="electroslag\texture\gli\core\texture_cube_array.inl">
+      <Filter>electroslag\texture\gli\core</Filter>
+    </None>
+    <None Include="electroslag\texture\gli\core\texture1d.inl">
+      <Filter>electroslag\texture\gli\core</Filter>
+    </None>
+    <None Include="electroslag\texture\gli\core\texture1d_array.inl">
+      <Filter>electroslag\texture\gli\core</Filter>
+    </None>
+    <None Include="electroslag\texture\gli\core\texture2d.inl">
+      <Filter>electroslag\texture\gli\core</Filter>
+    </None>
+    <None Include="electroslag\texture\gli\core\texture2d_array.inl">
+      <Filter>electroslag\texture\gli\core</Filter>
+    </None>
+    <None Include="electroslag\texture\gli\core\texture3d.inl">
+      <Filter>electroslag\texture\gli\core</Filter>
+    </None>
+    <None Include="electroslag\texture\gli\core\transform.inl">
+      <Filter>electroslag\texture\gli\core</Filter>
+    </None>
+    <None Include="electroslag\texture\gli\core\view.inl">
+      <Filter>electroslag\texture\gli\core</Filter>
+    </None>
+    <None Include="electroslag\math\glm\gtc\color_encoding.inl">
+      <Filter>electroslag\math\glm\gtc</Filter>
+    </None>
+    <None Include="electroslag\math\glm\gtc\functions.inl">
+      <Filter>electroslag\math\glm\gtc</Filter>
+    </None>
+    <None Include="electroslag\resources\content\build_content.bat">
+      <Filter>electroslag\resources\content</Filter>
+    </None>
+    <None Include="electroslag\resources\content\use_content.bat">
+      <Filter>electroslag\resources\content</Filter>
+    </None>
+    <None Include="electroslag\resources\content\loading_screen.json">
+      <Filter>electroslag\resources\content</Filter>
+    </None>
+    <None Include="electroslag\resources\content\content.json">
+      <Filter>electroslag\resources\content</Filter>
+    </None>
+    <None Include="electroslag\resources\content\loading_screen\shader\loading_screen.frag">
+      <Filter>electroslag\resources\content\loading_screen\shader</Filter>
+    </None>
+    <None Include="electroslag\resources\content\loading_screen\shader\loading_screen.vert">
+      <Filter>electroslag\resources\content\loading_screen\shader</Filter>
+    </None>
+  </ItemGroup>
+</Project>

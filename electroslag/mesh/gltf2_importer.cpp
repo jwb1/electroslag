@@ -52,13 +52,13 @@ namespace electroslag {
                 throw load_object_failure("file_name");
             }
 
-            boost::filesystem::path dir(file_name);
+            std::filesystem::path dir(file_name);
             ELECTROSLAG_CHECK(dir.has_filename());
 
             if (!dir.is_absolute()) {
-                boost::filesystem::path combined_dir(ar->get_base_directory());
+                std::filesystem::path combined_dir(ar->get_base_directory());
                 combined_dir /= dir;
-                dir = boost::filesystem::canonical(combined_dir);
+                dir = std::filesystem::canonical(combined_dir);
             }
 
             std::string object_prefix("");
@@ -272,10 +272,10 @@ namespace electroslag {
                         }
                         else {
                             // All file URIs are relative to the gltf2 file path.
-                            boost::filesystem::path buffer_path(m_file_name);
+                            std::filesystem::path buffer_path(m_file_name);
                             buffer_path = buffer_path.remove_filename();
                             buffer_path /= uri;
-                            buffer_path = boost::filesystem::canonical(buffer_path);
+                            buffer_path = std::filesystem::canonical(buffer_path);
 
                             file_stream buffer_stream;
                             buffer_stream.open(buffer_path.string(), file_stream_access_mode_read);
@@ -504,10 +504,10 @@ namespace electroslag {
                     }
                     else {
                         // All file URIs are relative to the gltf2 file path.
-                        boost::filesystem::path image_path(m_file_name);
+                        std::filesystem::path image_path(m_file_name);
                         image_path = image_path.remove_filename();
                         image_path /= uri;
-                        image_path = boost::filesystem::canonical(image_path);
+                        image_path = std::filesystem::canonical(image_path);
 
                         m_image_paths.emplace_back(image_path.generic_string());
                     }
@@ -1148,7 +1148,7 @@ namespace electroslag {
                     std::string node_name;
                     formatted_string_append(node_name, "%s::node::%d", m_object_prefix.c_str(), *node_index_iter);
 
-                    s->desc->insert_child_instance()
+                    //s->desc->insert_child_instance()
                 }
 
                 m_load_record->insert_object(s->desc);

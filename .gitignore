@@ -1,4 +1,24 @@
-## Ignore temporary files, cache file, and build results.
+## Ignore Visual Studio temporary files, cache file, and build results.
+
+# User-specific files
+*.suo
+*.user
 
 # Build result directories
-build/
+Debug/
+Release/
+intermediate/
+output/
+
+# Visual Studio 2015 cache/options directory
+.vs/
+
+# Visual C++ cache files
+ipch/
+*.aps
+*.ncb
+*.opendb
+*.opensdf
+*.sdf
+*.cachefile
+*.VC.db

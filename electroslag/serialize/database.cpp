@@ -68,8 +68,8 @@ namespace electroslag {
             file_stream db;
             db.open(file_name, file_stream_access_mode_read);
 
-            boost::filesystem::path dir(file_name);
-            dir = boost::filesystem::canonical(dir);
+            std::filesystem::path dir(file_name);
+            dir = std::filesystem::canonical(dir);
             dir = dir.remove_filename();
 
             // Use the directory containing the archive file as the base directory.
@@ -107,8 +107,8 @@ namespace electroslag {
             file_stream db;
             db.open(file_name, file_stream_access_mode_read);
 
-            boost::filesystem::path dir(file_name);
-            dir = boost::filesystem::canonical(dir);
+            std::filesystem::path dir(file_name);
+            dir = std::filesystem::canonical(dir);
             dir = dir.remove_filename();
 
             // Use the directory containing the archive file as the base directory.

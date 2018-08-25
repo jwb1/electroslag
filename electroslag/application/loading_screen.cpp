@@ -76,10 +76,10 @@ namespace electroslag {
                 m_loaded_objects = d->load_objects(loading_screen_resource, std::string("."));
             }
 #if !defined(ELECTROSLAG_BUILD_SHIP)
-            else if (boost::filesystem::exists(bin_path)) {
+            else if (std::filesystem::exists(bin_path)) {
                 m_loaded_objects = d->load_objects(bin_path);
             }
-            else if (boost::filesystem::exists(json_path)) {
+            else if (std::filesystem::exists(json_path)) {
                 m_loaded_objects = d->load_objects_json(json_path);
             }
 

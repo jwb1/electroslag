@@ -81,10 +81,6 @@
 - math
  - Review assembler GLM compilation to check for SIMD
 
-- misc
- - ship exe size
- - Compile with MinGW or Clang for Windows
-
 ~~ Math Conventions ~~
 - right handed coordinate space to match OpenGL conventions
 - vectors are treated as column vectors

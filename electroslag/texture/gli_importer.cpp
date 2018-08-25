@@ -38,13 +38,13 @@ namespace electroslag {
                 throw load_object_failure("file_name");
             }
 
-            boost::filesystem::path dir(file_name);
+            std::filesystem::path dir(file_name);
             ELECTROSLAG_CHECK(dir.has_filename());
 
             if (!dir.is_absolute()) {
-                boost::filesystem::path combined_dir(ar->get_base_directory());
+                std::filesystem::path combined_dir(ar->get_base_directory());
                 combined_dir /= dir;
-                dir = boost::filesystem::canonical(combined_dir);
+                dir = std::filesystem::canonical(combined_dir);
             }
 
             std::string object_name("");

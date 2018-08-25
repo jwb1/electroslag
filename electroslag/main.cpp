@@ -23,16 +23,10 @@ int main(int argc, char** argv)
         electroslag::application::application app(argc, argv);
         return_value = app.run();
     }
-    catch (std::logic_error const& e) {
-        std::printf("Logic error exception caught: %s\n", e.what());
-        return_value = EXIT_FAILURE;
-    }
-    catch (std::runtime_error const& e) {
-        std::printf("Runtime error exception caught: %s\n", e.what());
+    catch (std::exception const& e) {
         return_value = EXIT_FAILURE;
     }
     catch (...) {
-        std::printf("Unknown exception caught!\n");
         return_value = EXIT_FAILURE;
     }
 

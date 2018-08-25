@@ -34,13 +34,13 @@ namespace electroslag {
                     throw load_object_failure("source_file");
                 }
 
-                boost::filesystem::path source_path(source_file);
+                std::filesystem::path source_path(source_file);
                 ELECTROSLAG_CHECK(source_path.has_filename());
 
                 if (!source_path.is_absolute()) {
-                    boost::filesystem::path combined_dir(ar->get_base_directory());
+                    std::filesystem::path combined_dir(ar->get_base_directory());
                     combined_dir /= source_path;
-                    source_path = boost::filesystem::canonical(combined_dir);
+                    source_path = std::filesystem::canonical(combined_dir);
                 }
 
                 file_stream shader_stream;
