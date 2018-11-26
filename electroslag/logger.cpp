@@ -15,9 +15,7 @@
 
 #include "electroslag/precomp.hpp"
 #include "electroslag/systems.hpp"
-#include "electroslag/threading/thread.hpp"
 #include "electroslag/threading/this_thread.hpp"
-#include "electroslag/ui/ui_interface.hpp"
 
 namespace electroslag {
     logger* get_logger()
